@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ViewModelBinder {
-    func bindViewModel<ViewModelType: ViewModel>(viewModel: ViewModelType)
+    associatedtype ViewModelType
+    func bindViewModel(viewModel: ViewModelType)
 }

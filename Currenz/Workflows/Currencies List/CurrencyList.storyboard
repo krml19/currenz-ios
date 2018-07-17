@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vju-Ys-XE8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Currency List Navigation Controller-->
+        <scene sceneID="MzA-L3-bpB">
+            <objects>
+                <navigationController storyboardIdentifier="CurrencyListNavigationController" id="Vju-Ys-XE8" customClass="CurrencyListNavigationController" customModule="Currenz" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aE4-zI-fv3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LJB-01-fPL" kind="relationship" relationship="rootViewController" id="C73-uP-def"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKj-Bf-QGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="197"/>
+        </scene>
+        <!--Currency List View Controller-->
+        <scene sceneID="ym6-Um-eYm">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyListViewController" id="LJB-01-fPL" customClass="CurrencyListViewController" customModule="Currenz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p7Z-lc-x6Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="D4y-Va-pyq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TSd-XS-N1j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PhZ-EM-bhG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wke-5P-vLu"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="wke-5P-vLu" id="1on-iA-50o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kb3-xU-bOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="197"/>
+        </scene>
+    </scenes>
+</document>

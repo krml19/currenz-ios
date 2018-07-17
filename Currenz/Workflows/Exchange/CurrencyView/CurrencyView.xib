@@ -20,14 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="344"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-y2-0jU">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-y2-0jU">
                     <rect key="frame" x="10" y="162" width="35" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-5j-BPV">
-                    <rect key="frame" x="55" y="163.5" width="310" height="17"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P6k-5j-BPV" customClass="CurrencyTextField" customModule="Currenz" customModuleProvider="target">
+                    <rect key="frame" x="332" y="163.5" width="33" height="17"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
@@ -36,7 +36,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="P6k-5j-BPV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="BlI-m3-d8d"/>
-                <constraint firstItem="P6k-5j-BPV" firstAttribute="leading" secondItem="I1M-y2-0jU" secondAttribute="trailing" constant="10" id="NET-f1-ywX"/>
+                <constraint firstItem="P6k-5j-BPV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I1M-y2-0jU" secondAttribute="trailing" constant="10" id="NET-f1-ywX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="P6k-5j-BPV" secondAttribute="bottom" constant="10" id="idF-Bv-GEp"/>
                 <constraint firstItem="P6k-5j-BPV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="o3L-8a-adj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="P6k-5j-BPV" secondAttribute="trailing" constant="10" id="pSf-Z8-JSV"/>

@@ -81,14 +81,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `CurrencyExchange`.
     static let currencyExchange = _R.storyboard.currencyExchange()
+    /// Storyboard `CurrencyList`.
+    static let currencyList = _R.storyboard.currencyList()
     
     /// `UIStoryboard(name: "CurrencyExchange", bundle: ...)`
     static func currencyExchange(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.currencyExchange)
+    }
+    
+    /// `UIStoryboard(name: "CurrencyList", bundle: ...)`
+    static func currencyList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.currencyList)
     }
     
     fileprivate init() {}
@@ -174,21 +181,53 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try currencyExchange.validate()
+      try currencyList.validate()
     }
     
     struct currencyExchange: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = CurrencyExchangeNavigationController
       
       let bundle = R.hostingBundle
+      let currencyExchangeNavigationController = StoryboardViewControllerResource<CurrencyExchangeNavigationController>(identifier: "CurrencyExchangeNavigationController")
       let currencyExchangeViewController = StoryboardViewControllerResource<CurrencyExchangeViewController>(identifier: "CurrencyExchangeViewController")
       let name = "CurrencyExchange"
+      
+      func currencyExchangeNavigationController(_: Void = ()) -> CurrencyExchangeNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: currencyExchangeNavigationController)
+      }
       
       func currencyExchangeViewController(_: Void = ()) -> CurrencyExchangeViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: currencyExchangeViewController)
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "round-swap-horizontal-circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'round-swap-horizontal-circle' is used in storyboard 'CurrencyExchange', but couldn't be loaded.") }
         if _R.storyboard.currencyExchange().currencyExchangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currencyExchangeViewController' could not be loaded from storyboard 'CurrencyExchange' as 'CurrencyExchangeViewController'.") }
+        if _R.storyboard.currencyExchange().currencyExchangeNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currencyExchangeNavigationController' could not be loaded from storyboard 'CurrencyExchange' as 'CurrencyExchangeNavigationController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct currencyList: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = CurrencyListNavigationController
+      
+      let bundle = R.hostingBundle
+      let currencyListNavigationController = StoryboardViewControllerResource<CurrencyListNavigationController>(identifier: "CurrencyListNavigationController")
+      let currencyListViewController = StoryboardViewControllerResource<CurrencyListViewController>(identifier: "CurrencyListViewController")
+      let name = "CurrencyList"
+      
+      func currencyListNavigationController(_: Void = ()) -> CurrencyListNavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: currencyListNavigationController)
+      }
+      
+      func currencyListViewController(_: Void = ()) -> CurrencyListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: currencyListViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.currencyList().currencyListNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currencyListNavigationController' could not be loaded from storyboard 'CurrencyList' as 'CurrencyListNavigationController'.") }
+        if _R.storyboard.currencyList().currencyListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currencyListViewController' could not be loaded from storyboard 'CurrencyList' as 'CurrencyListViewController'.") }
       }
       
       fileprivate init() {}

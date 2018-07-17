@@ -6,10 +6,19 @@
 //  Copyright © 2018 Marcin Karmelita. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol Coordinator {
+protocol Coordinator: class {
+    func start()
+    func stop()
     
+    var presentation: Presentation { get }
+    init(presentation: Presentation)
 }
 
+extension Coordinator {
+    func stop() {
+        presentation.pop()
+    }
+}
 
