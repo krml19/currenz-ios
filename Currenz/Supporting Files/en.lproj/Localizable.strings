@@ -1,0 +1,12 @@
+/*
+ Localizable.strings
+ Currenz
+ 
+ Created by Marcin Karmelita on 16/07/2018.
+ Copyright © 2018 Marcin Karmelita. All rights reserved.
+ */
+
+"loc_lang" = "en";
+
+//Basics
+"currency_exchange_title" = "Exchange";

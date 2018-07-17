@@ -1,0 +1,6 @@
+framework module Pods_CurrenzUITests {
+  umbrella header "Pods-CurrenzUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

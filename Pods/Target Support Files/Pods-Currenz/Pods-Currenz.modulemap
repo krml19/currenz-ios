@@ -1,0 +1,6 @@
+framework module Pods_Currenz {
+  umbrella header "Pods-Currenz-umbrella.h"
+
+  export *
+  module * { export * }
+}

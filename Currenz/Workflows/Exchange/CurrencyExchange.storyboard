@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Sp-eU-8qB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Currency Exchange Navigation Controller-->
+        <scene sceneID="Cyo-fO-fUB">
+            <objects>
+                <navigationController id="8Sp-eU-8qB" customClass="CurrencyExchangeNavigationController" customModule="Currenz" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pTd-3i-5vu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rzS-42-m2K" kind="relationship" relationship="rootViewController" id="Gob-6K-LrP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDR-0E-Crq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="213"/>
+        </scene>
+        <!--Currency Exchange View Controller-->
+        <scene sceneID="VVa-Xu-QLG">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyExchangeViewController" id="rzS-42-m2K" customClass="CurrencyExchangeViewController" customModule="Currenz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5d9-S3-H8f"/>
+                        <viewControllerLayoutGuide type="bottom" id="1yb-HK-7Ut"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vCj-k6-ama">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-Gb-wv2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="224"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="bI7-Ja-4ld"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zh0-Gb-wv2" secondAttribute="trailing" id="2yS-lK-U2D"/>
+                            <constraint firstItem="zh0-Gb-wv2" firstAttribute="top" secondItem="5d9-S3-H8f" secondAttribute="bottom" id="grX-O2-mKe"/>
+                            <constraint firstItem="zh0-Gb-wv2" firstAttribute="leading" secondItem="vCj-k6-ama" secondAttribute="leading" id="jFv-Ds-d2h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Utk-aQ-KrO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZT-xa-hid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.80000000000001" y="212.74362818590706"/>
+        </scene>
+    </scenes>
+</document>

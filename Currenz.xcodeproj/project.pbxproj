@@ -1,0 +1,896 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5126A474F14189148AD0B687 /* Pods_CurrenzTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972909B1FDD43666C9A26587 /* Pods_CurrenzTests.framework */; };
+		B0B50F091A16C05189CC30F6 /* Pods_Currenz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB912FFE4DA4BA7F52340DE9 /* Pods_Currenz.framework */; };
+		B13991385C68C0E373F2DD19 /* Pods_CurrenzUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58181A4477307C9A571B775A /* Pods_CurrenzUITests.framework */; };
+		F21897ED20FD489900FD7933 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F21897EB20FD489900FD7933 /* Localizable.strings */; };
+		F21897F220FDD56600FD7933 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21897F120FDD56600FD7933 /* ValidationHelper.swift */; };
+		F21897F420FDD5B000FD7933 /* ErrorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21897F320FDD5B000FD7933 /* ErrorFactory.swift */; };
+		F2686CF320FD3A7500C23F44 /* ViewModelBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF020FD3A7400C23F44 /* ViewModelBinder.swift */; };
+		F2686CF420FD3A7500C23F44 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF120FD3A7500C23F44 /* View.swift */; };
+		F2686CF520FD3A7500C23F44 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF220FD3A7500C23F44 /* ViewModel.swift */; };
+		F2686CFC20FD3A8300C23F44 /* CurrencyExchangeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF620FD3A8300C23F44 /* CurrencyExchangeAPI.swift */; };
+		F2686CFE20FD3A8300C23F44 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF820FD3A8300C23F44 /* CurrencyExchangeModel.swift */; };
+		F2686CFF20FD3A8300C23F44 /* CurrencyExchangeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF920FD3A8300C23F44 /* CurrencyExchangeNetwork.swift */; };
+		F2686D0020FD3A8300C23F44 /* BasicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CFA20FD3A8300C23F44 /* BasicAPI.swift */; };
+		F2686D0120FD3A8300C23F44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CFB20FD3A8300C23F44 /* Constants.swift */; };
+		F2686D0420FD3EC000C23F44 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D0320FD3EC000C23F44 /* Appearance.swift */; };
+		F2686D0D20FD415400C23F44 /* CurrencyExchange.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2686D0920FD415400C23F44 /* CurrencyExchange.storyboard */; };
+		F2686D0E20FD415400C23F44 /* CurrencyExchangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D0A20FD415400C23F44 /* CurrencyExchangeCoordinator.swift */; };
+		F2686D0F20FD415400C23F44 /* CurrencyExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D0B20FD415400C23F44 /* CurrencyExchangeViewController.swift */; };
+		F2686D1020FD415400C23F44 /* CurrencyExchangeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D0C20FD415400C23F44 /* CurrencyExchangeViewModel.swift */; };
+		F2686D1220FD41BC00C23F44 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1120FD41BC00C23F44 /* Coordinator.swift */; };
+		F2686D1420FD424F00C23F44 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1320FD424F00C23F44 /* NavigationController.swift */; };
+		F2686D1620FD445100C23F44 /* CurrencyExchangeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1520FD445100C23F44 /* CurrencyExchangeNavigationController.swift */; };
+		F2686D1920FD463500C23F44 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1820FD463500C23F44 /* R.generated.swift */; };
+		F2F49BE720FD35430087A793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F49BE620FD35430087A793 /* AppDelegate.swift */; };
+		F2F49BE920FD35430087A793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F49BE820FD35430087A793 /* ViewController.swift */; };
+		F2F49BEE20FD35440087A793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F49BED20FD35440087A793 /* Assets.xcassets */; };
+		F2F49BFC20FD35440087A793 /* CurrenzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F49BFB20FD35440087A793 /* CurrenzTests.swift */; };
+		F2F49C0720FD35440087A793 /* CurrenzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F49C0620FD35440087A793 /* CurrenzUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2F49BF820FD35440087A793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2F49BDB20FD35430087A793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2F49BE220FD35430087A793;
+			remoteInfo = Currenz;
+		};
+		F2F49C0320FD35440087A793 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2F49BDB20FD35430087A793 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2F49BE220FD35430087A793;
+			remoteInfo = Currenz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3723620818FD6DF7A87BF054 /* Pods-CurrenzUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenzUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrenzUITests/Pods-CurrenzUITests.release.xcconfig"; sourceTree = "<group>"; };
+		58181A4477307C9A571B775A /* Pods_CurrenzUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrenzUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D35434122A5390E726BFB77 /* Pods-Currenz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currenz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Currenz/Pods-Currenz.release.xcconfig"; sourceTree = "<group>"; };
+		746764DC33CA9E406BFF1E70 /* Pods-CurrenzTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenzTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrenzTests/Pods-CurrenzTests.release.xcconfig"; sourceTree = "<group>"; };
+		91756A4521368D0DEECC1024 /* Pods-Currenz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currenz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Currenz/Pods-Currenz.debug.xcconfig"; sourceTree = "<group>"; };
+		972909B1FDD43666C9A26587 /* Pods_CurrenzTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrenzTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB912FFE4DA4BA7F52340DE9 /* Pods_Currenz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currenz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B358A275BA43DEDD8B815857 /* Pods-CurrenzUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenzUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrenzUITests/Pods-CurrenzUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C29C5D62396CE6B786FBB651 /* Pods-CurrenzTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrenzTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CurrenzTests/Pods-CurrenzTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F21897EC20FD489900FD7933 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F21897F120FDD56600FD7933 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
+		F21897F320FDD5B000FD7933 /* ErrorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFactory.swift; sourceTree = "<group>"; };
+		F2686CF020FD3A7400C23F44 /* ViewModelBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBinder.swift; sourceTree = "<group>"; };
+		F2686CF120FD3A7500C23F44 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		F2686CF220FD3A7500C23F44 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F2686CF620FD3A8300C23F44 /* CurrencyExchangeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeAPI.swift; sourceTree = "<group>"; };
+		F2686CF820FD3A8300C23F44 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
+		F2686CF920FD3A8300C23F44 /* CurrencyExchangeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeNetwork.swift; sourceTree = "<group>"; };
+		F2686CFA20FD3A8300C23F44 /* BasicAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAPI.swift; sourceTree = "<group>"; };
+		F2686CFB20FD3A8300C23F44 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F2686D0320FD3EC000C23F44 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		F2686D0920FD415400C23F44 /* CurrencyExchange.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrencyExchange.storyboard; sourceTree = "<group>"; };
+		F2686D0A20FD415400C23F44 /* CurrencyExchangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeCoordinator.swift; sourceTree = "<group>"; };
+		F2686D0B20FD415400C23F44 /* CurrencyExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewController.swift; sourceTree = "<group>"; };
+		F2686D0C20FD415400C23F44 /* CurrencyExchangeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewModel.swift; sourceTree = "<group>"; };
+		F2686D1120FD41BC00C23F44 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F2686D1320FD424F00C23F44 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		F2686D1520FD445100C23F44 /* CurrencyExchangeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeNavigationController.swift; sourceTree = "<group>"; };
+		F2686D1820FD463500C23F44 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		F2F49BE320FD35430087A793 /* Currenz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currenz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F49BE620FD35430087A793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F2F49BE820FD35430087A793 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F2F49BED20FD35440087A793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2F49BF220FD35440087A793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F49BF720FD35440087A793 /* CurrenzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrenzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F49BFB20FD35440087A793 /* CurrenzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenzTests.swift; sourceTree = "<group>"; };
+		F2F49BFD20FD35440087A793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F49C0220FD35440087A793 /* CurrenzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrenzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F49C0620FD35440087A793 /* CurrenzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenzUITests.swift; sourceTree = "<group>"; };
+		F2F49C0820FD35440087A793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2F49BE020FD35430087A793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0B50F091A16C05189CC30F6 /* Pods_Currenz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2F49BF420FD35440087A793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5126A474F14189148AD0B687 /* Pods_CurrenzTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2F49BFF20FD35440087A793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B13991385C68C0E373F2DD19 /* Pods_CurrenzUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69B238D9033183E3D047722D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91756A4521368D0DEECC1024 /* Pods-Currenz.debug.xcconfig */,
+				6D35434122A5390E726BFB77 /* Pods-Currenz.release.xcconfig */,
+				C29C5D62396CE6B786FBB651 /* Pods-CurrenzTests.debug.xcconfig */,
+				746764DC33CA9E406BFF1E70 /* Pods-CurrenzTests.release.xcconfig */,
+				B358A275BA43DEDD8B815857 /* Pods-CurrenzUITests.debug.xcconfig */,
+				3723620818FD6DF7A87BF054 /* Pods-CurrenzUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D5183CD08D8ABE16B317A93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB912FFE4DA4BA7F52340DE9 /* Pods_Currenz.framework */,
+				972909B1FDD43666C9A26587 /* Pods_CurrenzTests.framework */,
+				58181A4477307C9A571B775A /* Pods_CurrenzUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F21897F020FDD55100FD7933 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F21897F120FDD56600FD7933 /* ValidationHelper.swift */,
+				F21897F320FDD5B000FD7933 /* ErrorFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F2686CEC20FD3A3900C23F44 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F2686D1120FD41BC00C23F44 /* Coordinator.swift */,
+				F2686D0320FD3EC000C23F44 /* Appearance.swift */,
+				F2686CFB20FD3A8300C23F44 /* Constants.swift */,
+				F2F49BE820FD35430087A793 /* ViewController.swift */,
+				F2686CF120FD3A7500C23F44 /* View.swift */,
+				F2686CF220FD3A7500C23F44 /* ViewModel.swift */,
+				F2686CF020FD3A7400C23F44 /* ViewModelBinder.swift */,
+				F2686D1320FD424F00C23F44 /* NavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F2686CED20FD3A4000C23F44 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F2686CFA20FD3A8300C23F44 /* BasicAPI.swift */,
+				F2686CF620FD3A8300C23F44 /* CurrencyExchangeAPI.swift */,
+				F2686CF920FD3A8300C23F44 /* CurrencyExchangeNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F2686CEE20FD3A4500C23F44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2686CEF20FD3A4900C23F44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2686CF820FD3A8300C23F44 /* CurrencyExchangeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F2686D0220FD3E8400C23F44 /* Workflows */ = {
+			isa = PBXGroup;
+			children = (
+				F2686D0820FD411E00C23F44 /* Exchange */,
+			);
+			path = Workflows;
+			sourceTree = "<group>";
+		};
+		F2686D0520FD3EE100C23F44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F21897EB20FD489900FD7933 /* Localizable.strings */,
+				F2F49BED20FD35440087A793 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2686D0820FD411E00C23F44 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				F2686D0920FD415400C23F44 /* CurrencyExchange.storyboard */,
+				F2686D0A20FD415400C23F44 /* CurrencyExchangeCoordinator.swift */,
+				F2686D0B20FD415400C23F44 /* CurrencyExchangeViewController.swift */,
+				F2686D0C20FD415400C23F44 /* CurrencyExchangeViewModel.swift */,
+				F2686D1520FD445100C23F44 /* CurrencyExchangeNavigationController.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		F2F49BDA20FD35430087A793 = {
+			isa = PBXGroup;
+			children = (
+				F2686D1820FD463500C23F44 /* R.generated.swift */,
+				F2F49BE520FD35430087A793 /* Currenz */,
+				F2F49BFA20FD35440087A793 /* CurrenzTests */,
+				F2F49C0520FD35440087A793 /* CurrenzUITests */,
+				F2F49BE420FD35430087A793 /* Products */,
+				69B238D9033183E3D047722D /* Pods */,
+				9D5183CD08D8ABE16B317A93 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F2F49BE420FD35430087A793 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2F49BE320FD35430087A793 /* Currenz.app */,
+				F2F49BF720FD35440087A793 /* CurrenzTests.xctest */,
+				F2F49C0220FD35440087A793 /* CurrenzUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2F49BE520FD35430087A793 /* Currenz */ = {
+			isa = PBXGroup;
+			children = (
+				F2F49BE620FD35430087A793 /* AppDelegate.swift */,
+				F2686D0520FD3EE100C23F44 /* Supporting Files */,
+				F2686D0220FD3E8400C23F44 /* Workflows */,
+				F2686CEF20FD3A4900C23F44 /* Models */,
+				F2686CEE20FD3A4500C23F44 /* Extensions */,
+				F2686CED20FD3A4000C23F44 /* Network */,
+				F2686CEC20FD3A3900C23F44 /* Base */,
+				F21897F020FDD55100FD7933 /* Helpers */,
+				F2F49BF220FD35440087A793 /* Info.plist */,
+			);
+			path = Currenz;
+			sourceTree = "<group>";
+		};
+		F2F49BFA20FD35440087A793 /* CurrenzTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2F49BFB20FD35440087A793 /* CurrenzTests.swift */,
+				F2F49BFD20FD35440087A793 /* Info.plist */,
+			);
+			path = CurrenzTests;
+			sourceTree = "<group>";
+		};
+		F2F49C0520FD35440087A793 /* CurrenzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F2F49C0620FD35440087A793 /* CurrenzUITests.swift */,
+				F2F49C0820FD35440087A793 /* Info.plist */,
+			);
+			path = CurrenzUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2F49BE220FD35430087A793 /* Currenz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F49C0B20FD35440087A793 /* Build configuration list for PBXNativeTarget "Currenz" */;
+			buildPhases = (
+				D1870AB473AD3941D986AACF /* [CP] Check Pods Manifest.lock */,
+				F2686D1720FD451D00C23F44 /* R.swift */,
+				F2F49BDF20FD35430087A793 /* Sources */,
+				F2F49BE020FD35430087A793 /* Frameworks */,
+				F2F49BE120FD35430087A793 /* Resources */,
+				F2686CEB20FD37E300C23F44 /* SwiftLint */,
+				87FD38D92CE3CAA8002634B0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Currenz;
+			productName = Currenz;
+			productReference = F2F49BE320FD35430087A793 /* Currenz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2F49BF620FD35440087A793 /* CurrenzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F49C0E20FD35440087A793 /* Build configuration list for PBXNativeTarget "CurrenzTests" */;
+			buildPhases = (
+				2AF33680D0846A46C46FC9D5 /* [CP] Check Pods Manifest.lock */,
+				F2F49BF320FD35440087A793 /* Sources */,
+				F2F49BF420FD35440087A793 /* Frameworks */,
+				F2F49BF520FD35440087A793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2F49BF920FD35440087A793 /* PBXTargetDependency */,
+			);
+			name = CurrenzTests;
+			productName = CurrenzTests;
+			productReference = F2F49BF720FD35440087A793 /* CurrenzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F2F49C0120FD35440087A793 /* CurrenzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F49C1120FD35440087A793 /* Build configuration list for PBXNativeTarget "CurrenzUITests" */;
+			buildPhases = (
+				86150FEE700616881CFA1D19 /* [CP] Check Pods Manifest.lock */,
+				F2F49BFE20FD35440087A793 /* Sources */,
+				F2F49BFF20FD35440087A793 /* Frameworks */,
+				F2F49C0020FD35440087A793 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2F49C0420FD35440087A793 /* PBXTargetDependency */,
+			);
+			name = CurrenzUITests;
+			productName = CurrenzUITests;
+			productReference = F2F49C0220FD35440087A793 /* CurrenzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2F49BDB20FD35430087A793 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Marcin Karmelita";
+				TargetAttributes = {
+					F2F49BE220FD35430087A793 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					F2F49BF620FD35440087A793 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = F2F49BE220FD35430087A793;
+					};
+					F2F49C0120FD35440087A793 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = F2F49BE220FD35430087A793;
+					};
+				};
+			};
+			buildConfigurationList = F2F49BDE20FD35430087A793 /* Build configuration list for PBXProject "Currenz" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				en,
+			);
+			mainGroup = F2F49BDA20FD35430087A793;
+			productRefGroup = F2F49BE420FD35430087A793 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2F49BE220FD35430087A793 /* Currenz */,
+				F2F49BF620FD35440087A793 /* CurrenzTests */,
+				F2F49C0120FD35440087A793 /* CurrenzUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2F49BE120FD35430087A793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2686D0D20FD415400C23F44 /* CurrencyExchange.storyboard in Resources */,
+				F21897ED20FD489900FD7933 /* Localizable.strings in Resources */,
+				F2F49BEE20FD35440087A793 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2F49BF520FD35440087A793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2F49C0020FD35440087A793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AF33680D0846A46C46FC9D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrenzTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86150FEE700616881CFA1D19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrenzUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87FD38D92CE3CAA8002634B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Currenz/Pods-Currenz-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Currenz/Pods-Currenz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1870AB473AD3941D986AACF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Currenz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2686CEB20FD37E300C23F44 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		F2686D1720FD451D00C23F44 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2F49BDF20FD35430087A793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2686CFC20FD3A8300C23F44 /* CurrencyExchangeAPI.swift in Sources */,
+				F21897F220FDD56600FD7933 /* ValidationHelper.swift in Sources */,
+				F2686D0120FD3A8300C23F44 /* Constants.swift in Sources */,
+				F2686D1220FD41BC00C23F44 /* Coordinator.swift in Sources */,
+				F2686D1020FD415400C23F44 /* CurrencyExchangeViewModel.swift in Sources */,
+				F2686CF520FD3A7500C23F44 /* ViewModel.swift in Sources */,
+				F2686CF420FD3A7500C23F44 /* View.swift in Sources */,
+				F21897F420FDD5B000FD7933 /* ErrorFactory.swift in Sources */,
+				F2686CFF20FD3A8300C23F44 /* CurrencyExchangeNetwork.swift in Sources */,
+				F2686CF320FD3A7500C23F44 /* ViewModelBinder.swift in Sources */,
+				F2686D0E20FD415400C23F44 /* CurrencyExchangeCoordinator.swift in Sources */,
+				F2686D1420FD424F00C23F44 /* NavigationController.swift in Sources */,
+				F2686CFE20FD3A8300C23F44 /* CurrencyExchangeModel.swift in Sources */,
+				F2686D1920FD463500C23F44 /* R.generated.swift in Sources */,
+				F2686D0420FD3EC000C23F44 /* Appearance.swift in Sources */,
+				F2F49BE920FD35430087A793 /* ViewController.swift in Sources */,
+				F2F49BE720FD35430087A793 /* AppDelegate.swift in Sources */,
+				F2686D1620FD445100C23F44 /* CurrencyExchangeNavigationController.swift in Sources */,
+				F2686D0F20FD415400C23F44 /* CurrencyExchangeViewController.swift in Sources */,
+				F2686D0020FD3A8300C23F44 /* BasicAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2F49BF320FD35440087A793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2F49BFC20FD35440087A793 /* CurrenzTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2F49BFE20FD35440087A793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2F49C0720FD35440087A793 /* CurrenzUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2F49BF920FD35440087A793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2F49BE220FD35430087A793 /* Currenz */;
+			targetProxy = F2F49BF820FD35440087A793 /* PBXContainerItemProxy */;
+		};
+		F2F49C0420FD35440087A793 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2F49BE220FD35430087A793 /* Currenz */;
+			targetProxy = F2F49C0320FD35440087A793 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F21897EB20FD489900FD7933 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F21897EC20FD489900FD7933 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2F49C0920FD35440087A793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2F49C0A20FD35440087A793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2F49C0C20FD35440087A793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91756A4521368D0DEECC1024 /* Pods-Currenz.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5U789VYWC;
+				INFOPLIST_FILE = Currenz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.dev.Currenz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2F49C0D20FD35440087A793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D35434122A5390E726BFB77 /* Pods-Currenz.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5U789VYWC;
+				INFOPLIST_FILE = Currenz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.dev.Currenz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F2F49C0F20FD35440087A793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29C5D62396CE6B786FBB651 /* Pods-CurrenzTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5U789VYWC;
+				INFOPLIST_FILE = CurrenzTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.CurrenzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Currenz.app/Currenz";
+			};
+			name = Debug;
+		};
+		F2F49C1020FD35440087A793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 746764DC33CA9E406BFF1E70 /* Pods-CurrenzTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5U789VYWC;
+				INFOPLIST_FILE = CurrenzTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.CurrenzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Currenz.app/Currenz";
+			};
+			name = Release;
+		};
+		F2F49C1220FD35440087A793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B358A275BA43DEDD8B815857 /* Pods-CurrenzUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5U789VYWC;
+				INFOPLIST_FILE = CurrenzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.CurrenzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Currenz;
+			};
+			name = Debug;
+		};
+		F2F49C1320FD35440087A793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3723620818FD6DF7A87BF054 /* Pods-CurrenzUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5U789VYWC;
+				INFOPLIST_FILE = CurrenzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marcin.karmelita.CurrenzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Currenz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2F49BDE20FD35430087A793 /* Build configuration list for PBXProject "Currenz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F49C0920FD35440087A793 /* Debug */,
+				F2F49C0A20FD35440087A793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F49C0B20FD35440087A793 /* Build configuration list for PBXNativeTarget "Currenz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F49C0C20FD35440087A793 /* Debug */,
+				F2F49C0D20FD35440087A793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F49C0E20FD35440087A793 /* Build configuration list for PBXNativeTarget "CurrenzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F49C0F20FD35440087A793 /* Debug */,
+				F2F49C1020FD35440087A793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F49C1120FD35440087A793 /* Build configuration list for PBXNativeTarget "CurrenzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2F49C1220FD35440087A793 /* Debug */,
+				F2F49C1320FD35440087A793 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2F49BDB20FD35430087A793 /* Project object */;
+}
