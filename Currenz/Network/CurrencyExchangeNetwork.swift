@@ -10,13 +10,14 @@ import RxSwift
 import Moya
 
 protocol CurrencyExchangeServiceType: class {
-    func rate(currencyExchangeSymbol: String) -> Single<[CurrencyExchangeModel]>
+    func rate(currencyExchangeSymbol: String) -> Single<CurrencyExchangeModel?>
 }
 
 class CurrencyExchangeSerivce: CurrencyExchangeServiceType {
-    func rate(currencyExchangeSymbol: String) ->  Single<[CurrencyExchangeModel]> {
+    func rate(currencyExchangeSymbol: String) ->  Single<CurrencyExchangeModel?> {
         return provider.rx
             .request(.rate(currencyExchangeSymbol))
             .map(Array<CurrencyExchangeModel>.self)
+            .map({$0.first})
     }
 }

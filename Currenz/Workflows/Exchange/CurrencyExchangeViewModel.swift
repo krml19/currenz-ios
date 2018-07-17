@@ -8,25 +8,33 @@
 
 import RxSwift
 import RxCocoa
+import RxOptional
 
 final class CurrencyExchangeViewModel: ViewModel {
-//    let input = Input()
+    let input = Input()
     let output = Output()
     fileprivate let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        
+        super.init()
+        transform()
     }
 }
 
 // MARK: - Preparation
 fileprivate extension CurrencyExchangeViewModel {
-//    func transform(_ input: Input) -> Output {
-//        input.currencyExchangeSymbol
-//            .subscribe(onNext: { [weak self] (currencyExchangeSymbol) in
-//                self?.dependencies.currencyExchangeService.rate()
-//            }).disposed(by: disposeBag)
-//    }
+    func transform() {
+        input.currencyExchangeSymbol
+            .filterNil()
+            .flatMapLatest { (currencySymbol) -> Observable<CurrencyExchangeModel?> in
+                return self.dependencies.currencyExchangeService.rate(currencyExchangeSymbol: currencySymbol).asObservable()
+            }
+            .bind(to: output.currencyExchange)
+            .disposed(by: disposeBag)
+        
+    }
 }
 
 extension CurrencyExchangeViewModel {
@@ -38,7 +46,7 @@ extension CurrencyExchangeViewModel {
 // MARK: - Input
 extension CurrencyExchangeViewModel {
     struct Input {
-        let currencyExchangeSymbol: Observable<String>
+        let currencyExchangeSymbol: BehaviorSubject<String?> = BehaviorSubject<String?>(value: nil)
     }
 }
 
@@ -46,5 +54,6 @@ extension CurrencyExchangeViewModel {
 extension CurrencyExchangeViewModel {
     struct Output {
         let title = Driver<String>.just(R.string.localizable.currency_exchange_title())
+        let currencyExchange = BehaviorSubject<CurrencyExchangeModel?>(value: nil)
     }
 }

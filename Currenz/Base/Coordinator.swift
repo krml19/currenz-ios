@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Coordinator {
-//    func start<Dependencies, Presentation>(dependencies: Dependencies, presentation: Presentation)
+    
 }
 
 

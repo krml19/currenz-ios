@@ -12,6 +12,7 @@ target 'Currenz' do
   pod 'RxGesture'
   pod 'RxSwiftExt'
   pod 'Action'
+  pod 'RxOptional'
   # Logger
   pod 'SwiftyBeaver'
   # Network
@@ -20,6 +21,7 @@ target 'Currenz' do
   pod 'SwiftLint'
   # UI
   pod 'ChameleonFramework'
+  pod 'Reusable'
   # Utils
   pod 'R.swift'
   

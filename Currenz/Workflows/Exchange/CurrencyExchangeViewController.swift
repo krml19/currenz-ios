@@ -15,6 +15,7 @@ final class CurrencyExchangeViewController: ViewController {
     // MARK: Properties
     var viewModel: CurrencyExchangeViewModel! = CurrencyExchangeViewModel(dependencies: CurrencyExchangeViewModel.Dependencies(currencyExchangeService: CurrencyExchangeSerivce()))
 
+    @IBOutlet weak var currencyExchangeView: CurrencyExchangeView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +27,8 @@ final class CurrencyExchangeViewController: ViewController {
 private extension CurrencyExchangeViewController {
     func prepareViewController() {
         viewModel.output.title.asObservable().bind(to: self.rx.title).disposed(by: disposeBag)
+        Observable<String?>.just("USDEUR").bind(to: viewModel.input.currencyExchangeSymbol).disposed(by: disposeBag)
+        viewModel.output.currencyExchange.bind(to: currencyExchangeView.dataModel.currencyExchangeModel).disposed(by: disposeBag)
     }
 }
 

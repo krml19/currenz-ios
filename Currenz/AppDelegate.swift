@@ -61,14 +61,16 @@ private extension AppDelegate {
     func mock() {
         log.info("Path: \(NSHomeDirectory())")
         let network = CurrencyExchangeSerivce()
-        network.rate(currencyExchangeSymbol: "EURUSD").subscribe(onNext: { (response) in
-            log.debug(response)
-        }, onError: { (error) in
-            log.error(error)
-        }, onCompleted: {
-            log.info("onCompleted")
-        }, onDisposed: {
-            log.info("onDisposed")
-        }).disposed(by: disposeBag)
+        network.rate(currencyExchangeSymbol: "EURUSD")
+            .asObservable()
+            .subscribe(onNext: { (response) in
+                log.debug(response ?? "")
+            }, onError: { (error) in
+                log.error(error)
+            }, onCompleted: {
+                log.info("onCompleted")
+            }, onDisposed: {
+                log.info("onDisposed")
+            }).disposed(by: disposeBag)
     }
 }
