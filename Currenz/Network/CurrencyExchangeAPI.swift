@@ -9,20 +9,26 @@
 import Moya
 import Alamofire
 
-let provider = MoyaProvider<CurrencyExchange>(
-    plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: BasicAPI.JSONResponseDataFormatter)]
-)
-
-public enum CurrencyExchange {
+public enum CurrencyAPI {
     case rate(String)
+    case currencies
 }
 
-extension CurrencyExchange: TargetType {
-    public var baseURL: URL { return URL(string: Constants.API.forex.rawValue)!  }
+extension CurrencyAPI: TargetType {
+    public var baseURL: URL {
+        switch self {
+        case .currencies:
+            return URL(string: "https://free.currencyconverterapi.com/api/v6")!
+        default:
+            return URL(string: Constants.API.forex.rawValue)!
+        }
+    }
 
     public var path: String {
         switch self {
-        default:
+        case .currencies:
+            return "/currencies"
+        case .rate:
             return "/quotes"
         }
     }
@@ -42,8 +48,9 @@ extension CurrencyExchange: TargetType {
     }
 
     public var task: Task {
-//        GET https://forex.1forge.com/1.0.3/quotes?pairs=EURUSD,GBPJPY,AUDUSD&api_key=5FUtehFHXcw1xCIj2rbI5uNacWNDDMM1
         switch self {
+        case .currencies:
+            return Task.requestPlain
         case .rate(let symbol):
             let params: [String: Any] = ["pairs": symbol,
                                          "api_key": Constants.Keys.forex.rawValue]

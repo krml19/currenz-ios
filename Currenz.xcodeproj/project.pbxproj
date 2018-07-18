@@ -29,6 +29,10 @@
 		F218981F20FE7DD500FD7933 /* CurrencyListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218981E20FE7DD500FD7933 /* CurrencyListCoordinator.swift */; };
 		F218982120FE7DE800FD7933 /* CurrencyExchangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218982020FE7DE800FD7933 /* CurrencyExchangeCoordinator.swift */; };
 		F218982320FE9CE500FD7933 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218982220FE9CE500FD7933 /* AppCoordinator.swift */; };
+		F218982820FE9E2100FD7933 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F218982520FE9E2100FD7933 /* CurrencyTableViewCell.xib */; };
+		F218982920FE9E2100FD7933 /* CurrencyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218982620FE9E2100FD7933 /* CurrencyCellViewModel.swift */; };
+		F218982A20FE9E2100FD7933 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218982720FE9E2100FD7933 /* CurrencyTableViewCell.swift */; };
+		F218982C20FE9E4E00FD7933 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218982B20FE9E4E00FD7933 /* TableCell.swift */; };
 		F2686CF320FD3A7500C23F44 /* ViewModelBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF020FD3A7400C23F44 /* ViewModelBinder.swift */; };
 		F2686CF420FD3A7500C23F44 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF120FD3A7500C23F44 /* View.swift */; };
 		F2686CF520FD3A7500C23F44 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686CF220FD3A7500C23F44 /* ViewModel.swift */; };
@@ -99,6 +103,10 @@
 		F218981E20FE7DD500FD7933 /* CurrencyListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListCoordinator.swift; sourceTree = "<group>"; };
 		F218982020FE7DE800FD7933 /* CurrencyExchangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeCoordinator.swift; sourceTree = "<group>"; };
 		F218982220FE9CE500FD7933 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F218982520FE9E2100FD7933 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
+		F218982620FE9E2100FD7933 /* CurrencyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellViewModel.swift; sourceTree = "<group>"; };
+		F218982720FE9E2100FD7933 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		F218982B20FE9E4E00FD7933 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		F2686CF020FD3A7400C23F44 /* ViewModelBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelBinder.swift; sourceTree = "<group>"; };
 		F2686CF120FD3A7500C23F44 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		F2686CF220FD3A7500C23F44 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 		F218981020FE5A6A00FD7933 /* Currencies List */ = {
 			isa = PBXGroup;
 			children = (
+				F218982420FE9DFC00FD7933 /* CurrencyCell */,
 				F218981120FE5A9800FD7933 /* CurrencyList.storyboard */,
 				F218981220FE5A9800FD7933 /* CurrencyListViewController.swift */,
 				F218981320FE5A9800FD7933 /* CurrencyListViewModel.swift */,
@@ -225,6 +234,16 @@
 				F218981E20FE7DD500FD7933 /* CurrencyListCoordinator.swift */,
 			);
 			path = "Currencies List";
+			sourceTree = "<group>";
+		};
+		F218982420FE9DFC00FD7933 /* CurrencyCell */ = {
+			isa = PBXGroup;
+			children = (
+				F218982520FE9E2100FD7933 /* CurrencyTableViewCell.xib */,
+				F218982620FE9E2100FD7933 /* CurrencyCellViewModel.swift */,
+				F218982720FE9E2100FD7933 /* CurrencyTableViewCell.swift */,
+			);
+			path = CurrencyCell;
 			sourceTree = "<group>";
 		};
 		F2686CEC20FD3A3900C23F44 /* Base */ = {
@@ -240,6 +259,7 @@
 				F2686CF020FD3A7400C23F44 /* ViewModelBinder.swift */,
 				F2686D1320FD424F00C23F44 /* NavigationController.swift */,
 				F218981C20FE7CC100FD7933 /* Presentation.swift */,
+				F218982B20FE9E4E00FD7933 /* TableCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -472,6 +492,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F218982820FE9E2100FD7933 /* CurrencyTableViewCell.xib in Resources */,
 				F2686D0D20FD415400C23F44 /* CurrencyExchange.storyboard in Resources */,
 				F21897FB20FDFBDE00FD7933 /* CurrencyExchangeView.xib in Resources */,
 				F21897ED20FD489900FD7933 /* Localizable.strings in Resources */,
@@ -544,11 +565,13 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -560,11 +583,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -639,9 +664,11 @@
 				F218981520FE5A9800FD7933 /* CurrencyListViewController.swift in Sources */,
 				F218980520FE008F00FD7933 /* CurrencyView.swift in Sources */,
 				F218980D20FE2FA400FD7933 /* CurrencyTextField.swift in Sources */,
+				F218982C20FE9E4E00FD7933 /* TableCell.swift in Sources */,
 				F2686CF520FD3A7500C23F44 /* ViewModel.swift in Sources */,
 				F218981F20FE7DD500FD7933 /* CurrencyListCoordinator.swift in Sources */,
 				F2686CF420FD3A7500C23F44 /* View.swift in Sources */,
+				F218982920FE9E2100FD7933 /* CurrencyCellViewModel.swift in Sources */,
 				F21897F420FDD5B000FD7933 /* ErrorFactory.swift in Sources */,
 				F218982120FE7DE800FD7933 /* CurrencyExchangeCoordinator.swift in Sources */,
 				F218980A20FE1A6300FD7933 /* Formatter.swift in Sources */,
@@ -656,6 +683,7 @@
 				F218981B20FE6CB900FD7933 /* CurrencyListNavigationController.swift in Sources */,
 				F2686D0420FD3EC000C23F44 /* Appearance.swift in Sources */,
 				F2F49BE920FD35430087A793 /* ViewController.swift in Sources */,
+				F218982A20FE9E2100FD7933 /* CurrencyTableViewCell.swift in Sources */,
 				F2F49BE720FD35430087A793 /* AppDelegate.swift in Sources */,
 				F218981820FE5AD300FD7933 /* CurrencyModel.swift in Sources */,
 				F2686D1620FD445100C23F44 /* CurrencyExchangeNavigationController.swift in Sources */,

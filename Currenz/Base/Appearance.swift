@@ -17,11 +17,17 @@ struct Appearance {
     private static func configureNavBar() {
 //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().barTintColor = UIColor.flatForestGreenColorDark()
-        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = UIColor.flatWhite()
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.flatWhite()]
         
         UIBarButtonItem.appearance().tintColor = UIColor.flatWhite()
-        
+
+        UISearchBar.appearance().backgroundColor = UIColor.flatWhite()
+//        UISearchBar.appearance().textColor = UIColor.flatWhite()
+//        UISearchBar.appearance().barTintColor = UIColor.flatWhite()
+//        let s = UISearchBar()
+//        let se= UISearchController()
+//        se.searchBar.color
     }
 }

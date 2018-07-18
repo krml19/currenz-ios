@@ -10,6 +10,17 @@ import Foundation
 
 struct CurrencyModel: Decodable {
     let code: String
-    let symbol: String
     let name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "currencyName"
+        case code = "id"
+    }
+}
+
+// MARK: - CustomStringConvertible
+extension CurrencyModel: CustomStringConvertible {
+    var description: String {
+        return "\(code): \(name)"
+    }
 }

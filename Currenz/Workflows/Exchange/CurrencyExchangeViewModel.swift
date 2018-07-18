@@ -20,6 +20,10 @@ final class CurrencyExchangeViewModel: ViewModel {
         
         super.init()
         transform()
+        
+        dependencies.currencyExchangeService.currencies().subscribe({ _ in
+            
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -39,7 +43,7 @@ fileprivate extension CurrencyExchangeViewModel {
 
 extension CurrencyExchangeViewModel {
     struct Dependencies {
-        let currencyExchangeService: CurrencyExchangeSerivce
+        let currencyExchangeService: CurrencyService
     }
 }
 

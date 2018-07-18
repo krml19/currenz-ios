@@ -51,16 +51,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     /// Nib `CurrencyExchangeView`.
     static let currencyExchangeView = _R.nib._CurrencyExchangeView()
+    /// Nib `CurrencyTableViewCell`.
+    static let currencyTableViewCell = _R.nib._CurrencyTableViewCell()
     /// Nib `CurrencyView`.
     static let currencyView = _R.nib._CurrencyView()
     
     /// `UINib(name: "CurrencyExchangeView", in: bundle)`
     static func currencyExchangeView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.currencyExchangeView)
+    }
+    
+    /// `UINib(name: "CurrencyTableViewCell", in: bundle)`
+    static func currencyTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.currencyTableViewCell)
     }
     
     /// `UINib(name: "CurrencyView", in: bundle)`
@@ -159,6 +166,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _CurrencyTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CurrencyTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> CurrencyTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CurrencyTableViewCell
       }
       
       fileprivate init() {}

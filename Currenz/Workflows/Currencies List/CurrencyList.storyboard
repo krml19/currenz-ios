@@ -35,13 +35,26 @@
                     <view key="view" contentMode="scaleToFill" id="TSd-XS-N1j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="081-Rr-XFn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="081-Rr-XFn" firstAttribute="leading" secondItem="TSd-XS-N1j" secondAttribute="leading" id="1iZ-tp-iMq"/>
+                            <constraint firstItem="D4y-Va-pyq" firstAttribute="top" secondItem="081-Rr-XFn" secondAttribute="bottom" id="Hja-cc-G6y"/>
+                            <constraint firstAttribute="trailing" secondItem="081-Rr-XFn" secondAttribute="trailing" id="NgU-zq-tdI"/>
+                            <constraint firstItem="081-Rr-XFn" firstAttribute="top" secondItem="p7Z-lc-x6Q" secondAttribute="bottom" id="z4h-cl-POA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PhZ-EM-bhG">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wke-5P-vLu"/>
                     </navigationItem>
                     <connections>
                         <outlet property="closeButton" destination="wke-5P-vLu" id="1on-iA-50o"/>
+                        <outlet property="tableView" destination="081-Rr-XFn" id="LBg-8L-cwV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kb3-xU-bOx" userLabel="First Responder" sceneMemberID="firstResponder"/>

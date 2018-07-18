@@ -13,6 +13,7 @@ target 'Currenz' do
   pod 'RxSwiftExt'
   pod 'Action'
   pod 'RxOptional'
+  pod 'RxDataSources'
   # Logger
   pod 'SwiftyBeaver'
   # Network

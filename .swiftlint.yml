@@ -4,7 +4,7 @@ excluded: # paths to ignore during linting.
   - R.generated.swift
 
 disabled_rules:
-  # - line_length
+  - line_length
   - trailing_whitespace
   # - statement_position
   # - force_cast

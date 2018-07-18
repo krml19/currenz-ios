@@ -7,68 +7,66 @@
 //
 
 import RxSwift
+import RxDataSources
 
 final class CurrencyListViewModel: ViewModel {
-
-    var input = Input()
-    var output = Output()
-
-    struct Dependencies {
-
-    }
+    
+    let input: Input
+    let output: Output
+    private let items = Variable<[CurrencyModel]>([])
     fileprivate let dependencies: Dependencies
-
+    
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        input = Input.init(inputQuery: BehaviorSubject(value: nil))
+        output = Output(items: BehaviorSubject<[CurrencySectionModel]>(value: []))
+        
         super.init()
         
-        prepareInput()
-    }
-}
-
-// MARK: - Preparation
-fileprivate extension CurrencyListViewModel {
-    func prepareInput() {
-        prepareActionObserver()
-    }
-    
-    func prepareActionObserver() {
-        input.viewController.didAction
-            .subscribe(onNext: { [weak self] action in
-                switch action {
-                default: break
-                }
-            })
-            .disposed(by: disposeBag)
+        dependencies.currencyService.currencies().asObservable().bind(to: items).disposed(by: disposeBag)
+        Observable.combineLatest(input.inputQuery.asObservable(), items.asObservable()) { (query, it) -> [CurrencyModel] in
+            return it.filter({$0.code.hasPrefix(query ?? "")})
+        }
+            .map({$0.map(CurrencyCellViewModel.init)})
+            .map(CurrencySectionModel.init)
+            .map({[$0]})
+            .bind(to: output.items).disposed(by: disposeBag)
     }
 }
 
 // MARK: - Input
 extension CurrencyListViewModel {
     struct Input {
-        var viewController = ViewControllerInput()
-    }
-
-    struct ViewControllerInput {
-        enum Action {
-            
-        }
-       var didAction = PublishSubject<Action>()
+        let inputQuery: BehaviorSubject<String?>
     }
 }
 
 // MARK: - Output
 extension CurrencyListViewModel {
     struct Output {
-        var viewController = ViewControllerOutput()
-        var coordinator = CoordinatorOutput()
+        let items: BehaviorSubject<[CurrencySectionModel]>
     }
+}
 
-    struct ViewControllerOutput {
-
+// MARK: - Dependencies
+extension CurrencyListViewModel {
+    struct Dependencies {
+        let currencyService: CurrencyServiceType
     }
+}
 
-    struct CoordinatorOutput {
-
+// MARK: - SectionModelType
+extension CurrencyListViewModel {
+    struct CurrencySectionModel: SectionModelType {
+        var items: [CurrencyCellViewModel]
+        
+        init(original: CurrencyListViewModel.CurrencySectionModel, items: [CurrencyCellViewModel]) {
+            self = original
+            self.items = items
+        }
+        
+        init(items: [CurrencyCellViewModel]) {
+            self.items = items
+        }
     }
 }

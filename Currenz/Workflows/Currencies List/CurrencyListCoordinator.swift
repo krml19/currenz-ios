@@ -7,12 +7,12 @@
 //
 
 import UIKit
-typealias Command<T> = (T) -> ()
+typealias Command<T, U> = (T) -> U
 
 class CurrencyListCoordinator: Coordinator {
     struct Actions {
-        let closeAction: Command<Void>
-        let selectAction: Command<String>
+        let closeAction: Command<Void, Void>
+        let selectAction: Command<String, Void>
     }
     
     var actions: Actions?
@@ -22,7 +22,7 @@ class CurrencyListCoordinator: Coordinator {
             else {
                 fatalError("Wrong kind of UIViewController. Expected: \(CurrencyListViewController.self)")
         }
-        let currencyListViewModel = CurrencyListViewModel(dependencies: CurrencyListViewModel.Dependencies())
+        let currencyListViewModel = CurrencyListViewModel(dependencies: CurrencyListViewModel.Dependencies(currencyService: CurrencyService()))
         currencyListViewController.bindViewModel(viewModel: currencyListViewModel)
         currencyListViewController.delegate = self
         presentation.present(viewController: currencyListNavigationController)

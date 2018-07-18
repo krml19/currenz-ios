@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator {
     enum CoordinatorType {
         case currencyExchange
     }

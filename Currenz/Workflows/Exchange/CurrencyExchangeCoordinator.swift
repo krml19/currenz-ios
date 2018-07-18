@@ -28,7 +28,7 @@ class CurrencyExchangeCoordinator: Coordinator {
                 fatalError("Wrong kind of UIViewController. Expected: \(CurrencyExchangeViewController.self)")
         }
         
-        let currencyExchangeViewModel = CurrencyExchangeViewModel(dependencies: CurrencyExchangeViewModel.Dependencies(currencyExchangeService: CurrencyExchangeSerivce()))
+        let currencyExchangeViewModel = CurrencyExchangeViewModel(dependencies: CurrencyExchangeViewModel.Dependencies(currencyExchangeService: CurrencyService()))
         currencyExchangeViewController.bindViewModel(viewModel: currencyExchangeViewModel)
         currencyExchangeViewController.delegate = self
         presentation.present(viewController: currencyExchangeNavigationController)
