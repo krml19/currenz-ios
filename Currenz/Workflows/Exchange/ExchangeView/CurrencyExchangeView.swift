@@ -28,6 +28,7 @@ final class CurrencyExchangeView: View, NibOwnerLoadable {
     struct Actions {
         let fromCurrencyTappedAction: PublishSubject<Void>
         let toCurrencyTappedAction: PublishSubject<Void>
+        let swapAction: PublishSubject<Void>
     }
     
     let dataModel: DataModel = DataModel()
@@ -35,13 +36,13 @@ final class CurrencyExchangeView: View, NibOwnerLoadable {
     
     @IBOutlet private weak var fromCurrencyView: CurrencyView!
     @IBOutlet private weak var toCurrencyView: CurrencyView!
+    @IBOutlet weak var swapView: SwapView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         loadNibContent()
         prepareComponent()
-        
     }
 
     private func prepareComponent() {
@@ -56,6 +57,8 @@ final class CurrencyExchangeView: View, NibOwnerLoadable {
         dataModel.fromModel.bind(to: fromCurrencyView.dataModel.currencyModel).disposed(by: disposeBag)
         dataModel.toModel.bind(to: toCurrencyView.dataModel.currencyModel).disposed(by: disposeBag)
         
-        actions = Actions(fromCurrencyTappedAction: fromCurrencyView.actions.selectAction, toCurrencyTappedAction: toCurrencyView.actions.selectAction)
+        actions = Actions(fromCurrencyTappedAction: fromCurrencyView.actions.selectAction, toCurrencyTappedAction: toCurrencyView.actions.selectAction, swapAction: swapView.actions.swapAction)
+        
+        dataModel.currencyRateModel.map({FormatterHelper.shared.string(from: $0?.rate)}).bind(to: swapView.dataModel.title).disposed(by: disposeBag)
     }
 }

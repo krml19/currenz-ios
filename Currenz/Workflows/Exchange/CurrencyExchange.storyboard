@@ -37,18 +37,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-Gb-wv2" customClass="CurrencyExchangeView" customModule="Currenz" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <rect key="frame" x="5" y="69" width="365" height="140"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="bI7-Ja-4ld"/>
+                                    <constraint firstAttribute="height" constant="140" id="bI7-Ja-4ld"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zh0-Gb-wv2" secondAttribute="trailing" id="2yS-lK-U2D"/>
-                            <constraint firstItem="zh0-Gb-wv2" firstAttribute="top" secondItem="5d9-S3-H8f" secondAttribute="bottom" id="grX-O2-mKe"/>
-                            <constraint firstItem="zh0-Gb-wv2" firstAttribute="leading" secondItem="vCj-k6-ama" secondAttribute="leading" id="jFv-Ds-d2h"/>
+                            <constraint firstAttribute="trailing" secondItem="zh0-Gb-wv2" secondAttribute="trailing" constant="5" id="2yS-lK-U2D"/>
+                            <constraint firstItem="zh0-Gb-wv2" firstAttribute="top" secondItem="5d9-S3-H8f" secondAttribute="bottom" constant="5" id="grX-O2-mKe"/>
+                            <constraint firstItem="zh0-Gb-wv2" firstAttribute="leading" secondItem="vCj-k6-ama" secondAttribute="leading" constant="5" id="jFv-Ds-d2h"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Utk-aQ-KrO">

@@ -21,12 +21,17 @@ final class CurrencyExchangeViewController: ViewController {
         super.viewDidLoad()
         assert(viewModel != nil, "Oooups, viewModel property not instantiated.")
         
+        configureUI()
         prepareViewController()
     }
 }
 
 // MARK: - Preparation
 private extension CurrencyExchangeViewController {
+    func configureUI() {
+        currencyExchangeView.dropShadow()
+    }
+    
     func prepareViewController() {
         viewModel.output.title.asObservable().bind(to: self.rx.title).disposed(by: disposeBag)
         
@@ -44,6 +49,10 @@ private extension CurrencyExchangeViewController {
             .withLatestFrom(viewModel.output.toModel)
             .observeOn(MainScheduler.instance)
             .bind(to: viewModel.coordinatorActions.changeToModel)
+            .disposed(by: viewModel.disposeBag)
+        
+        currencyExchangeView.actions.swapAction
+            .bind(to: viewModel.input.swapModels)
             .disposed(by: viewModel.disposeBag)
     }
 }

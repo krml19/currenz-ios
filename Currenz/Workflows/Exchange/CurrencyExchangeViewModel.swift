@@ -39,6 +39,16 @@ private extension CurrencyExchangeViewModel {
             }
             .bind(to: output.currencyRateModel)
             .disposed(by: disposeBag)
+        
+        input.swapModels
+            .subscribe(onNext: { [weak self] models in
+                guard let strongSelf = self,
+                    let fromModel = try? strongSelf.input.fromModel.value(),
+                    let toModel = try? strongSelf.input.toModel.value()
+                    else { return }
+                strongSelf.input.toModel.onNext(fromModel)
+                strongSelf.input.fromModel.onNext(toModel)
+            }).disposed(by: disposeBag)
     }
 }
 
@@ -62,6 +72,7 @@ extension CurrencyExchangeViewModel {
     struct Input {
         let fromModel = BehaviorSubject<CurrencyModel?>(value: nil)
         let toModel = BehaviorSubject<CurrencyModel?>(value: nil)
+        let swapModels = PublishSubject<Void>()
     }
 }
 

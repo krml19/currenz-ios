@@ -51,7 +51,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     /// Nib `CurrencyExchangeView`.
     static let currencyExchangeView = _R.nib._CurrencyExchangeView()
@@ -59,6 +59,8 @@ struct R: Rswift.Validatable {
     static let currencyTableViewCell = _R.nib._CurrencyTableViewCell()
     /// Nib `CurrencyView`.
     static let currencyView = _R.nib._CurrencyView()
+    /// Nib `SwapView`.
+    static let swapView = _R.nib._SwapView()
     
     /// `UINib(name: "CurrencyExchangeView", in: bundle)`
     static func currencyExchangeView(_: Void = ()) -> UIKit.UINib {
@@ -73,6 +75,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "CurrencyView", in: bundle)`
     static func currencyView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.currencyView)
+    }
+    
+    /// `UINib(name: "SwapView", in: bundle)`
+    static func swapView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.swapView)
     }
     
     fileprivate init() {}
@@ -168,9 +175,14 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+    try nib.validate()
   }
   
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _SwapView.validate()
+    }
+    
     struct _CurrencyExchangeView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "CurrencyExchangeView"
@@ -199,6 +211,21 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _SwapView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SwapView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "round-swap-horizontal-circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'round-swap-horizontal-circle' is used in nib 'SwapView', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

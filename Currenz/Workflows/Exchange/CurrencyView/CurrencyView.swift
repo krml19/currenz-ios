@@ -28,7 +28,7 @@ class CurrencyView: View, NibOwnerLoadable {
         
         loadNibContent()
         prepareComponent()
-        prepareBindings()
+        configure()
     }
 
     func prepareComponent() {
@@ -38,7 +38,7 @@ class CurrencyView: View, NibOwnerLoadable {
         currencyInfoStackView.rx.tapGesture().map({_ in ()}).bind(to: actions.selectAction).disposed(by: disposeBag)
     }
     
-    internal func prepareBindings() {
+    func configure() {
         currencyValueTextField.rx.text
             .bind(to: dataModel.currencyValue).disposed(by: disposeBag)
         

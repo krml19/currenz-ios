@@ -13,3 +13,10 @@ struct CurrencyRateModel {
     let to: String
     let rate: Decimal
 }
+
+// MARK: - Factory method
+extension CurrencyRateModel {
+    static func inversed(currencyRateModel: CurrencyRateModel) -> CurrencyRateModel {
+        return CurrencyRateModel(from: currencyRateModel.to, to: currencyRateModel.from, rate: 1 / currencyRateModel.rate)
+    }
+}

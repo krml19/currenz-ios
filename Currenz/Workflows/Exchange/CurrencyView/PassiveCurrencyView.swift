@@ -13,18 +13,11 @@ final class PassiveCurrencyView: CurrencyView {
         return UINib(nibName: String(describing: CurrencyView.self), bundle: Bundle(for: self))
     }
     
-    override func prepareBindings() {
+    override func configure() {
+        currencyValueTextField.isEnabled = false
         dataModel.currencyValue.asObservable()
-//            .map({ (decimalValue) -> String? in
-//                return decimalValue != nil ? FormatterHelper.shared.string(from: decimalValue!) : nil
-//            })
             .bind(to: currencyValueTextField.rx.text)
             .disposed(by: disposeBag)
     }
-    
-    override func prepareComponent() {
-        super.prepareComponent()
-        
-        currencyValueTextField.isEnabled = false
-    }
 }
+
