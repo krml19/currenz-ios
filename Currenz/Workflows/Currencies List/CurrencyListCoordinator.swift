@@ -41,7 +41,7 @@ extension CurrencyListCoordinator: CurrencyListViewControllerDelegate {
         actions?.closeAction(())
     }
     
-    func didSelect(currencyExchangeCode: String) {
-        actions?.selectAction(currencyExchangeCode)
+    func didSelect(code: String) {
+        actions?.selectAction(code)
     }
 }

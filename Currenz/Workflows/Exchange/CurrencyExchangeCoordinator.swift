@@ -48,8 +48,8 @@ extension CurrencyExchangeCoordinator: CurrencyExchangeViewControllerDelegate {
             log.debug("close")
             currencyListCoordinator?.stop()
             self?.childCoordinators[.currencyList] = nil
-        }, selectAction: { [weak self, weak currencyListCoordinator] currencyExchangeCode in
-            log.debug("select")
+        }, selectAction: { [weak self, weak currencyListCoordinator] currencyCode in
+            log.debug("select: \(currencyCode)")
             currencyListCoordinator?.stop()
             self?.childCoordinators[.currencyList] = nil
         })

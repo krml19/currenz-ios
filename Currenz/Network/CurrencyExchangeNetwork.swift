@@ -12,11 +12,22 @@ import Moya
 protocol CurrencyServiceType: class {
     func rate(currencyExchangeSymbol: String) -> Single<CurrencyExchangeModel?>
     func currencies() -> Single<[CurrencyModel]>
+    func exchange(from: String, to: String) -> Single<CurrencyModel>
 }
 
 class CurrencyService: CurrencyServiceType {
     let provider = MoyaProvider<CurrencyAPI>(
-        plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: BasicAPI.JSONResponseDataFormatter)]
+        plugins: [
+            NetworkLoggerPlugin(verbose: true, responseDataFormatter: BasicAPI.JSONResponseDataFormatter),
+            NetworkActivityPlugin(networkActivityClosure: { (change, _) in
+                switch change {
+                case .began:
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                case .ended:
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+            })
+        ]
     )
     
     func rate(currencyExchangeSymbol: String) ->  Single<CurrencyExchangeModel?> {
@@ -31,5 +42,12 @@ class CurrencyService: CurrencyServiceType {
             .request(.currencies)
             .map([String: CurrencyModel].self, atKeyPath: "results")
             .map({Array($0.values)})
+    }
+    
+    func exchange(from: String, to: String) -> Single<CurrencyModel> {
+        return provider.rx
+            .request(.exchange(from: from, to: to))
+            .map([String: Decimal].self)
+            .map(<#T##type: Decodable.Protocol##Decodable.Protocol#>)
     }
 }

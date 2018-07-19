@@ -1,5 +1,5 @@
 //
-//  CurrencyExchangeAPI.swift
+//  CurrencyAPI.swift
 //  Currenz
 //
 //  Created by Marcin Karmelita on 16/07/2018.
@@ -11,6 +11,7 @@ import Alamofire
 
 public enum CurrencyAPI {
     case rate(String)
+    case exchange(from: String, to: String)
     case currencies
 }
 
@@ -18,6 +19,8 @@ extension CurrencyAPI: TargetType {
     public var baseURL: URL {
         switch self {
         case .currencies:
+            return URL(string: "https://free.currencyconverterapi.com/api/v6")!
+        case .exchange:
             return URL(string: "https://free.currencyconverterapi.com/api/v6")!
         default:
             return URL(string: Constants.API.forex.rawValue)!
@@ -30,6 +33,8 @@ extension CurrencyAPI: TargetType {
             return "/currencies"
         case .rate:
             return "/quotes"
+        case .exchange:
+            return "/convert"
         }
     }
 
@@ -51,6 +56,10 @@ extension CurrencyAPI: TargetType {
         switch self {
         case .currencies:
             return Task.requestPlain
+        case .exchange(let from, let to):
+            let params: [String: Any] = ["q": "\(from)_\(to)",
+                                         "compact": "ultra"]
+            return Task.requestParameters(parameters: params, encoding: URLEncoding.queryString)
         case .rate(let symbol):
             let params: [String: Any] = ["pairs": symbol,
                                          "api_key": Constants.Keys.forex.rawValue]

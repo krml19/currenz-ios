@@ -12,7 +12,7 @@ import RxDataSources
 
 protocol CurrencyListViewControllerDelegate: class {
     func didCancel()
-    func didSelect(currencyExchangeCode: String)
+    func didSelect(code: String)
 }
 
 final class CurrencyListViewController: ViewController {
@@ -40,8 +40,7 @@ private extension CurrencyListViewController {
             .subscribe(onNext: { [weak self] (_) in
                 self?.delegate?.didCancel()
             }).disposed(by: disposeBag)
-        
-        tableView.register(cellType: CurrencyTableViewCell.self)
+        tableView.configure(registerCells: [CurrencyTableViewCell.self])
         let dataSource = RxTableViewSectionedReloadDataSource<CurrencyListViewModel.CurrencySectionModel>(configureCell: { (ds, tv, indexPath, item) -> UITableViewCell in
             let cell: CurrencyTableViewCell = tv.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: item)
@@ -49,8 +48,9 @@ private extension CurrencyListViewController {
         })
         viewModel.output.items.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         tableView.rx.modelSelected(CurrencyCellViewModel.self).asObservable()
-            .subscribe(onNext: { (selectedModel) in
+            .subscribe(onNext: {[weak self] (selectedModel) in
                 log.info(selectedModel.model)
+                self?.delegate?.didSelect(code: selectedModel.model.code)
             }).disposed(by: disposeBag)
         
         let searchController = UISearchController(searchResultsController: nil)

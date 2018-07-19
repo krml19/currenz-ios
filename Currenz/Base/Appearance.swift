@@ -24,10 +24,7 @@ struct Appearance {
         UIBarButtonItem.appearance().tintColor = UIColor.flatWhite()
 
         UISearchBar.appearance().backgroundColor = UIColor.flatWhite()
-//        UISearchBar.appearance().textColor = UIColor.flatWhite()
-//        UISearchBar.appearance().barTintColor = UIColor.flatWhite()
-//        let s = UISearchBar()
-//        let se= UISearchController()
-//        se.searchBar.color
+        
+        UITableView.appearance().backgroundColor = .clear
     }
 }
