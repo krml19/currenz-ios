@@ -11,18 +11,25 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 import Reusable
+import RxGesture
 
 final class CurrencyView: View, NibOwnerLoadable {
     
     struct DataModel {
-        let currencyCode = BehaviorSubject<String?>(value: FormatterHelper.shared.noCurrency())
+        let currencyModel = BehaviorSubject<CurrencyModel?>(value: nil)
         let currencyValue = Variable<Decimal?>(nil)
         let active = Variable<Bool>(true)
     }
     
     var dataModel = DataModel()
+    let actions = Actions()
+    struct Actions {
+        let selectAction = PublishSubject<Void>()
+    }
     
+    @IBOutlet weak var currencyInfoStackView: UIStackView!
     @IBOutlet private weak var currencyCodeLabel: UILabel!
+    @IBOutlet private weak var currencyNameLabel: UILabel!
     @IBOutlet private weak var currencyValueTextField: UITextField!
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +40,9 @@ final class CurrencyView: View, NibOwnerLoadable {
     }
 
     fileprivate func prepareComponent() {
-        dataModel.currencyCode.bind(to: currencyCodeLabel.rx.text).disposed(by: disposeBag)
+        dataModel.currencyModel.map({$0?.code}).replaceNilWith(FormatterHelper.shared.noCurrency()).bind(to: currencyCodeLabel.rx.text).disposed(by: disposeBag)
+        dataModel.currencyModel.map({$0?.name}).replaceNilWith(FormatterHelper.shared.noCurrency()).bind(to: currencyNameLabel.rx.text).disposed(by: disposeBag)
+        
         currencyValueTextField.rx.text
             .map({$0 != nil ? Decimal(string: $0!) : nil})
             .bind(to: dataModel.currencyValue).disposed(by: disposeBag)
@@ -46,5 +55,6 @@ final class CurrencyView: View, NibOwnerLoadable {
             .disposed(by: disposeBag)
         dataModel.active.asObservable().bind(to: currencyValueTextField.rx.isEnabled).disposed(by: disposeBag)
         
+        currencyInfoStackView.rx.tapGesture().map({_ in ()}).bind(to: actions.selectAction).disposed(by: disposeBag)
     }
 }

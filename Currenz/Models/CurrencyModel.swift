@@ -24,3 +24,10 @@ extension CurrencyModel: CustomStringConvertible {
         return "\(code): \(name)"
     }
 }
+
+// MARK: - Filtering
+extension Array where Element == CurrencyModel {
+    func find(by code: String) -> CurrencyModel? {
+        return self.first(where: {$0.code == code})
+    }
+}

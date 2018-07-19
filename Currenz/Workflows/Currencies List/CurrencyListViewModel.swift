@@ -29,6 +29,7 @@ final class CurrencyListViewModel: ViewModel {
     
     let input: Input
     let output: Output
+    let coordinatorActions = CoordinatorActions()
     fileprivate let dependencies: Dependencies
     private let filters: CurrencyFilters
     
@@ -84,5 +85,13 @@ extension CurrencyListViewModel {
         init(items: [CurrencyCellViewModel]) {
             self.items = items
         }
+    }
+}
+
+// MARK: - CoordinatorActions
+extension CurrencyListViewModel {
+    struct CoordinatorActions {
+        let cancelAction = PublishSubject<Void>()
+        let selectModelAction = PublishSubject<CurrencyModel>()
     }
 }

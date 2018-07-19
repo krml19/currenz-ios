@@ -9,17 +9,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Action
-
-protocol CurrencyExchangeViewControllerDelegate: class {
-    func changeRates()
-}
 
 final class CurrencyExchangeViewController: ViewController {
 
     // MARK: Properties
     fileprivate var viewModel: CurrencyExchangeViewModel!
-    weak var delegate: CurrencyExchangeViewControllerDelegate?
     
     @IBOutlet weak var changeRatesButton: UIBarButtonItem!
     @IBOutlet weak var currencyExchangeView: CurrencyExchangeView!
@@ -34,15 +28,23 @@ final class CurrencyExchangeViewController: ViewController {
 // MARK: - Preparation
 private extension CurrencyExchangeViewController {
     func prepareViewController() {
-        changeRatesButton.rx.tap
-        .asDriver(onErrorJustReturn: ())
-            .drive(onNext: { [weak self] _ in
-                self?.delegate?.changeRates()
-            }).disposed(by: disposeBag)
-        
         viewModel.output.title.asObservable().bind(to: self.rx.title).disposed(by: disposeBag)
-        Observable<String?>.just("USDEUR").bind(to: viewModel.input.currencyExchangeSymbol).disposed(by: disposeBag)
-        viewModel.output.currencyExchange.bind(to: currencyExchangeView.dataModel.currencyExchangeModel).disposed(by: disposeBag)
+        
+        viewModel.output.currencyRateModel.bind(to: currencyExchangeView.dataModel.currencyRateModel).disposed(by: disposeBag)
+        viewModel.output.fromModel.bind(to: currencyExchangeView.dataModel.fromModel).disposed(by: disposeBag)
+        viewModel.output.toModel.bind(to: currencyExchangeView.dataModel.toModel).disposed(by: disposeBag)
+        
+        currencyExchangeView.actions.fromCurrencyTappedAction
+            .withLatestFrom(viewModel.output.fromModel)
+            .observeOn(MainScheduler.instance)
+            .bind(to: viewModel.coordinatorActions.changeFromModel)
+            .disposed(by: viewModel.disposeBag)
+        
+        currencyExchangeView.actions.toCurrencyTappedAction
+            .withLatestFrom(viewModel.output.toModel)
+            .observeOn(MainScheduler.instance)
+            .bind(to: viewModel.coordinatorActions.changeToModel)
+            .disposed(by: viewModel.disposeBag)
     }
 }
 

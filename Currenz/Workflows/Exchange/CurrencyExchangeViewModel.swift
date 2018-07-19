@@ -13,6 +13,8 @@ import RxOptional
 final class CurrencyExchangeViewModel: ViewModel {
     let input = Input()
     let output = Output()
+    let coordinatorActions = CoordinatorActions()
+    
     fileprivate let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
@@ -20,37 +22,46 @@ final class CurrencyExchangeViewModel: ViewModel {
         
         super.init()
         transform()
-        
-        dependencies.currencyExchangeService.currencies().subscribe({ _ in
-            
-        }).disposed(by: disposeBag)
     }
 }
 
 // MARK: - Preparation
-fileprivate extension CurrencyExchangeViewModel {
+private extension CurrencyExchangeViewModel {
     func transform() {
-        input.currencyExchangeSymbol
-            .filterNil()
-            .flatMapLatest { (currencySymbol) -> Observable<CurrencyExchangeModel?> in
-                return self.dependencies.currencyExchangeService.rate(currencyExchangeSymbol: currencySymbol).asObservable()
-            }
-            .bind(to: output.currencyExchange)
-            .disposed(by: disposeBag)
+        input.fromModel.bind(to: output.fromModel).disposed(by: disposeBag)
+        input.toModel.bind(to: output.toModel).disposed(by: disposeBag)
         
+        Observable.combineLatest(input.fromModel.filterNil(), input.toModel.filterNil(), resultSelector: { (from, to) -> (from: String, to: String) in
+                return (from.code, to.code)
+            })
+            .flatMapLatest { (symbols) -> Observable<CurrencyRateModel> in
+                return self.dependencies.currencyService.exchange(from: symbols.from, to: symbols.to).asObservable()
+            }
+            .bind(to: output.currencyRateModel)
+            .disposed(by: disposeBag)
     }
 }
 
+// MARK: - CoordinatorActions
+extension CurrencyExchangeViewModel {
+    struct CoordinatorActions {
+        let changeFromModel = PublishSubject<CurrencyModel?>()
+        let changeToModel = PublishSubject<CurrencyModel?>()
+    }
+}
+
+// MARK: - Dependencies
 extension CurrencyExchangeViewModel {
     struct Dependencies {
-        let currencyExchangeService: CurrencyService
+        let currencyService: CurrencyServiceType
     }
 }
 
 // MARK: - Input
 extension CurrencyExchangeViewModel {
     struct Input {
-        let currencyExchangeSymbol: BehaviorSubject<String?> = BehaviorSubject<String?>(value: nil)
+        let fromModel = BehaviorSubject<CurrencyModel?>(value: nil)
+        let toModel = BehaviorSubject<CurrencyModel?>(value: nil)
     }
 }
 
@@ -58,6 +69,9 @@ extension CurrencyExchangeViewModel {
 extension CurrencyExchangeViewModel {
     struct Output {
         let title = Driver<String>.just(R.string.localizable.currency_exchange_title())
-        let currencyExchange = BehaviorSubject<CurrencyExchangeModel?>(value: nil)
+        
+        let currencyRateModel = BehaviorSubject<CurrencyRateModel?>(value: nil)
+        let fromModel = BehaviorSubject<CurrencyModel?>(value: nil)
+        let toModel = BehaviorSubject<CurrencyModel?>(value: nil)
     }
 }

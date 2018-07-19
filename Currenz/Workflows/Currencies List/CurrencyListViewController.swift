@@ -10,16 +10,10 @@ import UIKit
 import RxSwift
 import RxDataSources
 
-protocol CurrencyListViewControllerDelegate: class {
-    func didCancel()
-    func didSelect(code: String)
-}
-
 final class CurrencyListViewController: ViewController {
 
     // MARK: Properties
     var viewModel: CurrencyListViewModel!
-    weak var delegate: CurrencyListViewControllerDelegate?
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,22 +30,20 @@ final class CurrencyListViewController: ViewController {
 private extension CurrencyListViewController {
     func prepareViewController() {
         
-        closeButton.rx.tap.asObservable()
-            .subscribe(onNext: { [weak self] (_) in
-                self?.delegate?.didCancel()
-            }).disposed(by: disposeBag)
+        closeButton.rx.tap.bind(to: viewModel.coordinatorActions.cancelAction).disposed(by: disposeBag)
+        
         tableView.configure(registerCells: [CurrencyTableViewCell.self])
         let dataSource = RxTableViewSectionedReloadDataSource<CurrencyListViewModel.CurrencySectionModel>(configureCell: { (ds, tv, indexPath, item) -> UITableViewCell in
             let cell: CurrencyTableViewCell = tv.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel: item)
             return cell
         })
+        
         viewModel.output.items.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         tableView.rx.modelSelected(CurrencyCellViewModel.self).asObservable()
-            .subscribe(onNext: {[weak self] (selectedModel) in
-                log.info(selectedModel.model)
-                self?.delegate?.didSelect(code: selectedModel.model.code)
-            }).disposed(by: disposeBag)
+            .map({$0.model})
+            .bind(to: viewModel.coordinatorActions.selectModelAction)
+            .disposed(by: disposeBag)
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false

@@ -28,16 +28,27 @@ class CurrencyExchangeCoordinator: Coordinator {
                 fatalError("Wrong kind of UIViewController. Expected: \(CurrencyExchangeViewController.self)")
         }
         
-        let currencyExchangeViewModel = CurrencyExchangeViewModel(dependencies: CurrencyExchangeViewModel.Dependencies(currencyExchangeService: CurrencyService()))
+        let currencyExchangeViewModel = CurrencyExchangeViewModel(dependencies: CurrencyExchangeViewModel.Dependencies(currencyService: CurrencyService()))
+        currencyExchangeViewModel.coordinatorActions.changeFromModel.flatMap({self.change(old: $0)}).bind(to: currencyExchangeViewModel.input.fromModel).disposed(by: currencyExchangeViewModel.disposeBag)
+        currencyExchangeViewModel.coordinatorActions.changeToModel.flatMap({self.change(old: $0)}).bind(to: currencyExchangeViewModel.input.toModel).disposed(by: currencyExchangeViewModel.disposeBag)
+        
         currencyExchangeViewController.bindViewModel(viewModel: currencyExchangeViewModel)
-        currencyExchangeViewController.delegate = self
         presentation.present(viewController: currencyExchangeNavigationController)
     }
 }
 
-// MARK: - CurrencyExchangeViewControllerDelegate
-extension CurrencyExchangeCoordinator: CurrencyExchangeViewControllerDelegate {
-    func changeRates() {
+// MARK: - CurrencyExchangeViewModel.CoordinatorActions
+private extension CurrencyExchangeCoordinator {
+    func change(old: CurrencyModel?) -> Single<CurrencyModel?> {
+        return Single<CurrencyModel?>.create { [weak self] (observer) -> Disposable in
+            self?.changeRate(from: old, completion: { (selectedCurrencyModel) in
+                observer(SingleEvent.success(selectedCurrencyModel))
+            })
+            return Disposables.create()
+        }
+    }
+    
+    func changeRate(from: CurrencyModel?, completion: @escaping (CurrencyModel?) -> Void) {
         guard let presentingViewController = presentation.presentingViewController else {
             fatalError("Property: `presentation.presentingViewController` cannot be nil")
         }
@@ -48,10 +59,12 @@ extension CurrencyExchangeCoordinator: CurrencyExchangeViewControllerDelegate {
             log.debug("close")
             currencyListCoordinator?.stop()
             self?.childCoordinators[.currencyList] = nil
-        }, selectAction: { [weak self, weak currencyListCoordinator] currencyCode in
-            log.debug("select: \(currencyCode)")
+            completion(from)
+        }, selectAction: { [weak self, weak currencyListCoordinator] selectedCurrencyModel in
+            log.debug("select: \(selectedCurrencyModel)")
             currencyListCoordinator?.stop()
             self?.childCoordinators[.currencyList] = nil
+            completion(selectedCurrencyModel)
         })
         
         currencyListCoordinator.start()

@@ -11,6 +11,7 @@ import Foundation
 enum AppError: Error {
     case network(error: Error)
     case validation(reason: String)
+    case jsonParsing
 }
 
 extension AppError: LocalizedError {

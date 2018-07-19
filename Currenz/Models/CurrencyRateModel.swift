@@ -8,14 +8,8 @@
 
 import Foundation
 
-struct CurrencyRateModel: Decodable {
+struct CurrencyRateModel {
     let from: String
     let to: String
     let rate: Decimal
-    let inversed: Decimal
-    
-//    enum CodingKeys: String, CodingKey {
-//        case rate = "currencyName"
-//        case code = "id"
-//    }
 }
