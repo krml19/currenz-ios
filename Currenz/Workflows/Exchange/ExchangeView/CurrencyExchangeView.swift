@@ -45,14 +45,17 @@ final class CurrencyExchangeView: View, NibOwnerLoadable {
     }
 
     private func prepareComponent() {
-        fromCurrencyView.dataModel.currencyValue.asObservable().debug().bind(to: dataModel.inputValue).disposed(by: disposeBag)
-        dataModel.outputValue.debug().bind(to: toCurrencyView.dataModel.currencyValue).disposed(by: disposeBag)
+        fromCurrencyView.dataModel.currencyValue.asObservable()
+            .map({FormatterHelper.shared.number(from: $0)})
+            .debug().bind(to: dataModel.inputValue).disposed(by: disposeBag)
+        
+        dataModel.outputValue.debug()
+            .map({FormatterHelper.shared.string(from: $0)})
+            .bind(to: toCurrencyView.dataModel.currencyValue).disposed(by: disposeBag)
         
         dataModel.fromModel.bind(to: fromCurrencyView.dataModel.currencyModel).disposed(by: disposeBag)
         dataModel.toModel.bind(to: toCurrencyView.dataModel.currencyModel).disposed(by: disposeBag)
         
         actions = Actions(fromCurrencyTappedAction: fromCurrencyView.actions.selectAction, toCurrencyTappedAction: toCurrencyView.actions.selectAction)
-        
-        toCurrencyView.dataModel.active.value = false
     }
 }

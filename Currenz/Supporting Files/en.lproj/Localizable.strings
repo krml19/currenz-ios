@@ -10,3 +10,4 @@
 
 //Basics
 "currency_exchange_title" = "Exchange";
+"not_matching_pattern" = "`%@` not match to pattern: `%@`";

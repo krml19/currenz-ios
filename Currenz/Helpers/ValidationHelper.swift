@@ -15,9 +15,7 @@ class ValidationHelper {
         
         static func ==(lhs: ValidationStatus, rhs: ValidationStatus) -> Bool {
             switch (lhs, rhs) {
-            case (.valid, .valid):
-                return true
-            case (.invalid(_), .invalid(_)):
+            case (.valid, .valid), (.invalid, .invalid):
                 return true
             default:
                 return false
@@ -38,5 +36,11 @@ class ValidationHelper {
             log.error(error)
             fatalError("Incorrect regex pattern: \(pattern)")
         }
+    }
+    
+    class func numberFormat(text: String) -> ValidationStatus {
+        let decimalSeparator = Locale.current.decimalSeparator ?? "."
+        let pattern = "^[0-9]{0,10}\(decimalSeparator)?[0-9]{0,2}$"
+        return validate(text: text, pattern: pattern, failingReason: R.string.localizable.not_matching_pattern(text, pattern))
     }
 }

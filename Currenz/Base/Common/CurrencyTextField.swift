@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class CurrencyTextField: UITextField {
     var bottomLineTextColor: UIColor = UIColor.flatForestGreenColorDark()
@@ -35,7 +36,7 @@ final class CurrencyTextField: UITextField {
     private func prepareComponent() {
         self.layer.addSublayer(bottomLineLayer)
         self.layer.masksToBounds = true
-        
+        delegate = self
         rx.text
             .map({$0.isNotEmpty})
             .distinctUntilChanged()
@@ -55,5 +56,14 @@ final class CurrencyTextField: UITextField {
         let width = bottomLineLayer.borderWidth
         bottomLineLayer.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: self.frame.size.height)
     }
-    
+}
+
+// MARK: - UITextFieldDelegate
+extension CurrencyTextField: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text {
+            return ValidationHelper.numberFormat(text: text + string) == .valid
+        }
+        return true
+    }
 }

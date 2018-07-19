@@ -7,7 +7,6 @@
 //
 
 import UIKit
-typealias Command<T, U> = (T) -> U
 
 class CurrencyListCoordinator: Coordinator {
     struct Actions {

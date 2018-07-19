@@ -13,7 +13,6 @@ import RxOptional
 import RxCocoa
 
 protocol CurrencyServiceType: class {
-    func rate(currencyExchangeSymbol: String) -> Single<CurrencyExchangeModel?>
     func currencies() -> Single<[CurrencyModel]>
     func exchange(from: String, to: String) -> Single<CurrencyRateModel>
 }
@@ -32,13 +31,6 @@ class CurrencyService: CurrencyServiceType {
             })
         ]
     )
-    
-    func rate(currencyExchangeSymbol: String) ->  Single<CurrencyExchangeModel?> {
-        return provider.rx
-            .request(.rate(currencyExchangeSymbol))
-            .map(Array<CurrencyExchangeModel>.self)
-            .map({$0.first})
-    }
     
     func currencies() -> Single<[CurrencyModel]> {
         return provider.rx

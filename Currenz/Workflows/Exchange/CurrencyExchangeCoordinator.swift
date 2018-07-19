@@ -48,7 +48,7 @@ private extension CurrencyExchangeCoordinator {
         }
     }
     
-    func changeRate(from: CurrencyModel?, completion: @escaping (CurrencyModel?) -> Void) {
+    func changeRate(from: CurrencyModel?, completion: @escaping Command<CurrencyModel?, Void>) {
         guard let presentingViewController = presentation.presentingViewController else {
             fatalError("Property: `presentation.presentingViewController` cannot be nil")
         }

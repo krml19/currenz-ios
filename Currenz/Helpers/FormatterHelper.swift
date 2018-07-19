@@ -1,5 +1,5 @@
 //
-//  Formatter.swift
+//  FormatterHelper.swift
 //  Currenz
 //
 //  Created by Marcin Karmelita on 17/07/2018.
@@ -17,16 +17,17 @@ class FormatterHelper {
     private init() {
         numberFormatter = NumberFormatter()
         numberFormatter.minimum  = 0
-        numberFormatter.maximum = 1000000
         numberFormatter.minimumFractionDigits = 0
         numberFormatter.maximumFractionDigits = 2
     }
     
-    func number(from: String) -> Decimal? {
+    func number(from: String?) -> Decimal? {
+        guard let from = from else { return nil }
         return numberFormatter.number(from: from)?.decimalValue
     }
     
-    func string(from: Decimal) -> String? {
+    func string(from: Decimal?) -> String? {
+        guard let from = from else { return nil }
         return numberFormatter.string(from: from as NSDecimalNumber)
     }
     

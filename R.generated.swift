@@ -110,12 +110,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
     struct localizable {
       /// en translation: Exchange
       /// 
       /// Locales: en
       static let currency_exchange_title = Rswift.StringResource(key: "currency_exchange_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: `%@` not match to pattern: `%@`
+      /// 
+      /// Locales: en
+      static let not_matching_pattern = Rswift.StringResource(key: "not_matching_pattern", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: en
       /// 
       /// Locales: en
@@ -126,6 +130,13 @@ struct R: Rswift.Validatable {
       /// Locales: en
       static func currency_exchange_title(_: Void = ()) -> String {
         return NSLocalizedString("currency_exchange_title", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: `%@` not match to pattern: `%@`
+      /// 
+      /// Locales: en
+      static func not_matching_pattern(_ value1: String, _ value2: String) -> String {
+        return String(format: NSLocalizedString("not_matching_pattern", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1, value2)
       }
       
       /// en translation: en
