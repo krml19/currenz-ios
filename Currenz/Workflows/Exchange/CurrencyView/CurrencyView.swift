@@ -46,6 +46,21 @@ class CurrencyView: View, NibOwnerLoadable {
             .bind(to: currencyValueTextField.rx.text)
             .disposed(by: disposeBag)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        backgroundColor = .flatWhite()
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        backgroundColor = .white
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        backgroundColor = .white
+    }
 }
 
 // MARK: - Structs

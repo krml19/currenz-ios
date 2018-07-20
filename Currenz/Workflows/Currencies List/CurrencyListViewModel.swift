@@ -62,6 +62,7 @@ extension CurrencyListViewModel {
 extension CurrencyListViewModel {
     struct Output {
         let items: BehaviorSubject<[CurrencySectionModel]>
+        let title = BehaviorSubject<String>(value: R.string.localizable.select_new_currency())
     }
 }
 

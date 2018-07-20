@@ -23,8 +23,11 @@ struct Appearance {
         
         UIBarButtonItem.appearance().tintColor = UIColor.flatWhite()
 
-        UISearchBar.appearance().backgroundColor = UIColor.flatWhite()
+//        UISearchBar.appearance().backgroundColor = UIColor.flatWhite()
         
         UITableView.appearance().backgroundColor = .clear
+        
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.flatWhite()]
+        UISearchBar.appearance().tintColor = UIColor.flatWhite()
     }
 }

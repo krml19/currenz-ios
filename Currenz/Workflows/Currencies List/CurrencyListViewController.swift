@@ -30,6 +30,7 @@ final class CurrencyListViewController: ViewController {
 private extension CurrencyListViewController {
     func prepareViewController() {
         
+        viewModel.output.title.bind(to: rx.title).disposed(by: disposeBag)
         closeButton.rx.tap.bind(to: viewModel.coordinatorActions.cancelAction).disposed(by: disposeBag)
         
         tableView.configure(registerCells: [CurrencyTableViewCell.self])
@@ -44,6 +45,7 @@ private extension CurrencyListViewController {
             .map({$0.model})
             .bind(to: viewModel.coordinatorActions.selectModelAction)
             .disposed(by: disposeBag)
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false

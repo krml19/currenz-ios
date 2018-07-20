@@ -37,10 +37,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zh0-Gb-wv2" customClass="CurrencyExchangeView" customModule="Currenz" customModuleProvider="target">
-                                <rect key="frame" x="5" y="69" width="365" height="140"/>
+                                <rect key="frame" x="5" y="69" width="365" height="150"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="bI7-Ja-4ld"/>
+                                    <constraint firstAttribute="height" constant="150" id="bI7-Ja-4ld"/>
                                 </constraints>
                             </view>
                         </subviews>

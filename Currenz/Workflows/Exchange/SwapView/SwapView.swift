@@ -35,8 +35,8 @@ final class SwapView: View, NibOwnerLoadable {
         swapButton.rx.tap.bind(to: actions.swapAction).disposed(by: disposeBag)
         
         swapButton.borders()
-        swapButton.setBackgroundColor(UIColor.flatWhite(), for: .normal)
-        swapButton.setBackgroundColor(UIColor.flatWhiteColorDark(), for: .highlighted)
+        swapButton.backgroundColor(UIColor.flatWhite(), for: .normal)
+        swapButton.backgroundColor(UIColor.flatWhiteColorDark(), for: .highlighted)
         
         separatorView.backgroundColor = UIColor.flatWhiteColorDark()
     }

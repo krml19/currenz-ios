@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     // https://stackoverflow.com/questions/14523348/how-to-change-the-background-color-of-a-uibutton-while-its-highlighted
-    private func image(withColor color: UIColor) -> UIImage? {
+    private func image(_ color: UIColor) -> UIImage? {
         let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
@@ -24,7 +24,7 @@ extension UIButton {
         return image
     }
     
-    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
-        self.setBackgroundImage(image(withColor: color), for: state)
+    func backgroundColor(_ color: UIColor, for state: UIControl.State = []) {
+        self.setBackgroundImage(image(color), for: state)
     }
 }

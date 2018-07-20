@@ -19,23 +19,25 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="344"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNw-ok-Q8T">
-                    <rect key="frame" x="10" y="10" width="355" height="324"/>
+                    <rect key="frame" x="10" y="10" width="355" height="36"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V9A-xC-F4C">
-                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="324"/>
+                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="36"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC8-Eo-zhN">
-                                    <rect key="frame" x="0.0" y="0.0" width="43" height="157"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="43" height="13"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqN-UK-Atq">
-                                    <rect key="frame" x="0.0" y="167" width="35.5" height="157"/>
+                                    <rect key="frame" x="0.0" y="23" width="35.5" height="13"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -43,16 +45,17 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIB-pa-wEH">
-                            <rect key="frame" x="177.5" y="0.0" width="177.5" height="324"/>
+                            <rect key="frame" x="177.5" y="0.0" width="177.5" height="36"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhw-4e-mai" customClass="CurrencyTextField" customModule="Currenz" customModuleProvider="target">
-                                    <rect key="frame" x="161" y="150" width="16.5" height="24"/>
+                                    <rect key="frame" x="161" y="6" width="16.5" height="24"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Dhw-4e-mai" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GIB-pa-wEH" secondAttribute="top" id="E3h-yn-3ab"/>
                                 <constraint firstAttribute="trailing" secondItem="Dhw-4e-mai" secondAttribute="trailing" id="Nby-Nv-ph0"/>
@@ -76,7 +79,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="33.5" y="215"/>
+            <point key="canvasLocation" x="-5.5" y="265"/>
         </view>
     </objects>
 </document>
