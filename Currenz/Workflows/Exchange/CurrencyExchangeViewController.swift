@@ -15,7 +15,6 @@ final class CurrencyExchangeViewController: ViewController {
     // MARK: Properties
     fileprivate var viewModel: CurrencyExchangeViewModel!
     
-    @IBOutlet weak var changeRatesButton: UIBarButtonItem!
     @IBOutlet weak var currencyExchangeView: CurrencyExchangeView!
     override func viewDidLoad() {
         super.viewDidLoad()

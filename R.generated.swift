@@ -268,7 +268,6 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "round-swap-horizontal-circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'round-swap-horizontal-circle' is used in storyboard 'CurrencyExchange', but couldn't be loaded.") }
         if _R.storyboard.currencyExchange().currencyExchangeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currencyExchangeViewController' could not be loaded from storyboard 'CurrencyExchange' as 'CurrencyExchangeViewController'.") }
         if _R.storyboard.currencyExchange().currencyExchangeNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'currencyExchangeNavigationController' could not be loaded from storyboard 'CurrencyExchange' as 'CurrencyExchangeNavigationController'.") }
       }

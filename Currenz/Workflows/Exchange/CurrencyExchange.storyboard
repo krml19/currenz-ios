@@ -51,11 +51,8 @@
                             <constraint firstItem="zh0-Gb-wv2" firstAttribute="leading" secondItem="vCj-k6-ama" secondAttribute="leading" constant="5" id="jFv-Ds-d2h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Utk-aQ-KrO">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="round-swap-horizontal-circle" landscapeImage="round-swap-horizontal-circle" style="plain" id="xfW-bm-r4F"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Utk-aQ-KrO"/>
                     <connections>
-                        <outlet property="changeRatesButton" destination="xfW-bm-r4F" id="hG5-Fj-C3G"/>
                         <outlet property="currencyExchangeView" destination="zh0-Gb-wv2" id="E8D-Bl-bxz"/>
                     </connections>
                 </viewController>
@@ -64,7 +61,4 @@
             <point key="canvasLocation" x="376.80000000000001" y="212.74362818590706"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="round-swap-horizontal-circle" width="18" height="18"/>
-    </resources>
 </document>
