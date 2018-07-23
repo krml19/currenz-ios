@@ -15,6 +15,7 @@
                 <outlet property="currencyInfoStackView" destination="V9A-xC-F4C" id="D7N-rr-YBd"/>
                 <outlet property="currencyNameLabel" destination="bqN-UK-Atq" id="N6f-x5-7EX"/>
                 <outlet property="currencyValueTextField" destination="Dhw-4e-mai" id="Lau-6n-d7W"/>
+                <outlet property="emptyView" destination="qJ6-Lq-rfL" id="kMp-eU-eBS"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -69,12 +70,23 @@
                         <constraint firstItem="GIB-pa-wEH" firstAttribute="width" secondItem="V9A-xC-F4C" secondAttribute="width" id="hz5-ks-B55"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJ6-Lq-rfL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="qJ6-Lq-rfL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CR2-SZ-hZq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hNw-ok-Q8T" secondAttribute="trailing" constant="10" id="Nwt-ay-6mz"/>
                 <constraint firstItem="hNw-ok-Q8T" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="VWy-8n-sKM"/>
+                <constraint firstAttribute="trailing" secondItem="qJ6-Lq-rfL" secondAttribute="trailing" id="YXm-QQ-dns"/>
                 <constraint firstItem="hNw-ok-Q8T" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="b2i-6J-u4y"/>
+                <constraint firstItem="qJ6-Lq-rfL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="u0O-VJ-5DZ"/>
+                <constraint firstAttribute="bottom" secondItem="qJ6-Lq-rfL" secondAttribute="bottom" id="vbs-nJ-bl0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hNw-ok-Q8T" secondAttribute="bottom" constant="10" id="xx8-ha-dlC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

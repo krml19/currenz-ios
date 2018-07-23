@@ -22,6 +22,7 @@ class CurrencyView: View, NibOwnerLoadable {
     @IBOutlet internal weak var currencyCodeLabel: UILabel!
     @IBOutlet internal weak var currencyNameLabel: UILabel!
     @IBOutlet internal weak var currencyValueTextField: UITextField!
+    @IBOutlet internal weak var emptyView: UIButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,6 +37,8 @@ class CurrencyView: View, NibOwnerLoadable {
         dataModel.currencyModel.map({$0?.name}).replaceNilWith(FormatterHelper.shared.noCurrency()).bind(to: currencyNameLabel.rx.text).disposed(by: disposeBag)
         
         currencyInfoStackView.rx.tapGesture().map({_ in ()}).bind(to: actions.selectAction).disposed(by: disposeBag)
+        dataModel.currencyModel.map({$0 != nil}).bind(to: emptyView.rx.isHidden).disposed(by: disposeBag)
+        emptyView.rx.tap.bind(to: actions.selectAction).disposed(by: disposeBag)
     }
     
     func configure() {
