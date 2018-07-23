@@ -9,11 +9,7 @@
 import Foundation
 
 class Constants {
-    enum Keys: String {
-        case forex = "5FUtehFHXcw1xCIj2rbI5uNacWNDDMM1"
-    }
-    
     enum API: String {
-        case forex = "https://forex.1forge.com/1.0.3"
+        case currencyConverter = "https://free.currencyconverterapi.com/api/v6"
     }
 }

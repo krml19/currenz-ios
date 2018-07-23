@@ -10,7 +10,6 @@ import Moya
 import Alamofire
 
 public enum CurrencyAPI {
-    case rate(String)
     case exchange(from: String, to: String)
     case currencies
 }
@@ -18,12 +17,8 @@ public enum CurrencyAPI {
 extension CurrencyAPI: TargetType {
     public var baseURL: URL {
         switch self {
-        case .currencies:
-            return URL(string: "https://free.currencyconverterapi.com/api/v6")!
-        case .exchange:
-            return URL(string: "https://free.currencyconverterapi.com/api/v6")!
         default:
-            return URL(string: Constants.API.forex.rawValue)!
+            return URL(string: Constants.API.currencyConverter.rawValue)!
         }
     }
 
@@ -31,8 +26,6 @@ extension CurrencyAPI: TargetType {
         switch self {
         case .currencies:
             return "/currencies"
-        case .rate:
-            return "/quotes"
         case .exchange:
             return "/convert"
         }
@@ -59,10 +52,6 @@ extension CurrencyAPI: TargetType {
         case .exchange(let from, let to):
             let params: [String: Any] = ["q": "\(from)_\(to)",
                                          "compact": "ultra"]
-            return Task.requestParameters(parameters: params, encoding: URLEncoding.queryString)
-        case .rate(let symbol):
-            let params: [String: Any] = ["pairs": symbol,
-                                         "api_key": Constants.Keys.forex.rawValue]
             return Task.requestParameters(parameters: params, encoding: URLEncoding.queryString)
         }
     }
