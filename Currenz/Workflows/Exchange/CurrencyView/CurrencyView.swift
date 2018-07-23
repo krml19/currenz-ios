@@ -39,6 +39,8 @@ class CurrencyView: View, NibOwnerLoadable {
         currencyInfoStackView.rx.tapGesture().map({_ in ()}).bind(to: actions.selectAction).disposed(by: disposeBag)
         dataModel.currencyModel.map({$0 != nil}).bind(to: emptyView.rx.isHidden).disposed(by: disposeBag)
         emptyView.rx.tap.bind(to: actions.selectAction).disposed(by: disposeBag)
+        
+        dataModel.titleForEmptyView.bind(to: emptyView.rx.title()).disposed(by: disposeBag)
     }
     
     func configure() {
@@ -71,6 +73,7 @@ extension CurrencyView {
     struct DataModel {
         let currencyModel = BehaviorSubject<CurrencyModel?>(value: nil)
         let currencyValue = Variable<String?>(nil)
+        let titleForEmptyView = Observable<String?>.just(R.string.localizable.select_new_currency())
     }
     
     struct Actions {
