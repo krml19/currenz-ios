@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import NVActivityIndicatorView
 
 final class CurrencyListViewController: ViewController {
 
@@ -16,6 +17,7 @@ final class CurrencyListViewController: ViewController {
     var viewModel: CurrencyListViewModel!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    private var loader: Loader?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -45,8 +47,13 @@ private extension CurrencyListViewController {
             .map({$0.model})
             .bind(to: viewModel.coordinatorActions.selectModelAction)
             .disposed(by: disposeBag)
+
+        prepareSearchController()
+        loader = Loader(activityIndicator: viewModel.output.activityIndicator)
+    }
+    
+    func prepareSearchController() {
         navigationItem.hidesSearchBarWhenScrolling = false
-        
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController

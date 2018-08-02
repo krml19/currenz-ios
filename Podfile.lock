@@ -13,6 +13,9 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - NVActivityIndicatorView (4.3.0):
+    - NVActivityIndicatorView/Presenter (= 4.3.0)
+  - NVActivityIndicatorView/Presenter (4.3.0)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
@@ -46,6 +49,7 @@ DEPENDENCIES:
   - Action
   - ChameleonFramework
   - Moya/RxSwift
+  - NVActivityIndicatorView
   - R.swift
   - Reusable
   - RxCocoa
@@ -64,6 +68,7 @@ SPEC REPOS:
     - ChameleonFramework
     - Differentiator
     - Moya
+    - NVActivityIndicatorView
     - R.swift
     - R.swift.Library
     - Result
@@ -83,6 +88,7 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Moya: a725035953bc1c0eb1be505ab903984501d82440
+  NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
@@ -96,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
   SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
 
-PODFILE CHECKSUM: 2dbf8e1bb94e43616860530069623e7d93d1d898
+PODFILE CHECKSUM: 2d771e89c43bb7095c26c0eafaf71b569200952b
 
 COCOAPODS: 1.5.3

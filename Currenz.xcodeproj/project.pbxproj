@@ -57,6 +57,9 @@
 		F2686D1420FD424F00C23F44 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1320FD424F00C23F44 /* NavigationController.swift */; };
 		F2686D1620FD445100C23F44 /* CurrencyExchangeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1520FD445100C23F44 /* CurrencyExchangeNavigationController.swift */; };
 		F2686D1920FD463500C23F44 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2686D1820FD463500C23F44 /* R.generated.swift */; };
+		F2E2C3CD2112275E00E45CB8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2C3CC2112275E00E45CB8 /* ActivityIndicator.swift */; };
+		F2E2C3CF211228C600E45CB8 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2C3CE211228C600E45CB8 /* Loader.swift */; };
+		F2E2C3D72113991D00E45CB8 /* CurrencyFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E2C3D62113991D00E45CB8 /* CurrencyFilters.swift */; };
 		F2F49BE720FD35430087A793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F49BE620FD35430087A793 /* AppDelegate.swift */; };
 		F2F49BE920FD35430087A793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F49BE820FD35430087A793 /* ViewController.swift */; };
 		F2F49BEE20FD35440087A793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F49BED20FD35440087A793 /* Assets.xcassets */; };
@@ -138,6 +141,9 @@
 		F2686D1320FD424F00C23F44 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F2686D1520FD445100C23F44 /* CurrencyExchangeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeNavigationController.swift; sourceTree = "<group>"; };
 		F2686D1820FD463500C23F44 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		F2E2C3CC2112275E00E45CB8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		F2E2C3CE211228C600E45CB8 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		F2E2C3D62113991D00E45CB8 /* CurrencyFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFilters.swift; sourceTree = "<group>"; };
 		F2F49BE320FD35430087A793 /* Currenz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currenz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F49BE620FD35430087A793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F49BE820FD35430087A793 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,8 @@
 				F260DEDE210537F500487AF5 /* FormatterHelper.swift */,
 				F21897F120FDD56600FD7933 /* ValidationHelper.swift */,
 				F21897F320FDD5B000FD7933 /* ErrorFactory.swift */,
+				F2E2C3CC2112275E00E45CB8 /* ActivityIndicator.swift */,
+				F2E2C3CE211228C600E45CB8 /* Loader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 		F260DEF521053D9100487AF5 /* Currencies List */ = {
 			isa = PBXGroup;
 			children = (
+				F2E2C3D62113991D00E45CB8 /* CurrencyFilters.swift */,
 				F260DEF621053D9100487AF5 /* CurrencyListCoordinator.swift */,
 				F260DEF721053D9100487AF5 /* CurrencyListNavigationController.swift */,
 				F260DEF821053D9100487AF5 /* CurrencyList.storyboard */,
@@ -596,11 +605,14 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -612,11 +624,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -689,6 +704,7 @@
 				F260DEF12105385500487AF5 /* UIView+Shadow.swift in Sources */,
 				F260DEF02105385500487AF5 /* UITableView+Configure.swift in Sources */,
 				F260DF10210604E200487AF5 /* PassiveCurrencyView.swift in Sources */,
+				F2E2C3D72113991D00E45CB8 /* CurrencyFilters.swift in Sources */,
 				F260DF0321053D9100487AF5 /* CurrencyListViewModel.swift in Sources */,
 				F260DF0B21053DAF00487AF5 /* SwapView.swift in Sources */,
 				F218980520FE008F00FD7933 /* CurrencyView.swift in Sources */,
@@ -701,6 +717,7 @@
 				F21897F420FDD5B000FD7933 /* ErrorFactory.swift in Sources */,
 				F260DEE72105384000487AF5 /* TableCell.swift in Sources */,
 				F260DEE62105384000487AF5 /* Presentation.swift in Sources */,
+				F2E2C3CD2112275E00E45CB8 /* ActivityIndicator.swift in Sources */,
 				F2686CFF20FD3A8300C23F44 /* CurrencyExchangeNetwork.swift in Sources */,
 				F260DEE12105382600487AF5 /* CurrencyAPI.swift in Sources */,
 				F2686CF320FD3A7500C23F44 /* ViewModelBinder.swift in Sources */,
@@ -710,6 +727,7 @@
 				F260DF0221053D9100487AF5 /* CurrencyListViewController.swift in Sources */,
 				F21897F920FDFBDE00FD7933 /* CurrencyExchangeView.swift in Sources */,
 				F260DF0421053D9100487AF5 /* CurrencyCellViewModel.swift in Sources */,
+				F2E2C3CF211228C600E45CB8 /* Loader.swift in Sources */,
 				F260DEE52105384000487AF5 /* Command.swift in Sources */,
 				F2686D1920FD463500C23F44 /* R.generated.swift in Sources */,
 				F2686D0420FD3EC000C23F44 /* Appearance.swift in Sources */,

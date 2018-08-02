@@ -13,7 +13,7 @@ class ValidationHelper {
     enum ValidationStatus: Equatable {
         case valid, invalid(AppError)
         
-        static func ==(lhs: ValidationStatus, rhs: ValidationStatus) -> Bool {
+        static func == (lhs: ValidationStatus, rhs: ValidationStatus) -> Bool {
             switch (lhs, rhs) {
             case (.valid, .valid), (.invalid, .invalid):
                 return true

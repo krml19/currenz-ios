@@ -20,4 +20,3 @@ final class PassiveCurrencyView: CurrencyView {
             .disposed(by: disposeBag)
     }
 }
-

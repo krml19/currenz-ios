@@ -14,6 +14,7 @@ target 'Currenz' do
   pod 'Action'
   pod 'RxOptional'
   pod 'RxDataSources'
+  
   # Logger
   pod 'SwiftyBeaver'
   # Network
@@ -23,6 +24,7 @@ target 'Currenz' do
   # UI
   pod 'ChameleonFramework'
   pod 'Reusable'
+  pod 'NVActivityIndicatorView'
   # Utils
   pod 'R.swift'
   

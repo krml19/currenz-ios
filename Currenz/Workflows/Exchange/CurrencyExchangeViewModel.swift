@@ -36,6 +36,9 @@ private extension CurrencyExchangeViewModel {
             })
             .flatMapLatest { (symbols) -> Observable<CurrencyRateModel> in
                 return self.dependencies.currencyService.exchange(from: symbols.from, to: symbols.to).asObservable()
+                    .trackActivity(self.output.activityIndicator)
+                    // TODO (MK): Handle errors
+                    .ignoreErrors()
             }
             .bind(to: output.currencyRateModel)
             .disposed(by: disposeBag)
@@ -84,5 +87,6 @@ extension CurrencyExchangeViewModel {
         let currencyRateModel = BehaviorSubject<CurrencyRateModel?>(value: nil)
         let fromModel = BehaviorSubject<CurrencyModel?>(value: nil)
         let toModel = BehaviorSubject<CurrencyModel?>(value: nil)
+        let activityIndicator: ActivityIndicator = ActivityIndicator()
     }
 }

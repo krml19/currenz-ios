@@ -8,6 +8,7 @@
 
 import UIKit
 import Reusable
+
 extension UITableView {
     func configure<T: UITableViewCell>(registerCells: [T.Type], tableFooterView: UIView = UIView(), tableHeaderView: UIView? = nil) where T: Reusable & NibLoadable {
         self.tableFooterView = tableFooterView

@@ -19,6 +19,7 @@ class FormatterHelper {
         numberFormatter.minimum  = 0
         numberFormatter.minimumFractionDigits = 0
         numberFormatter.maximumFractionDigits = 2
+        numberFormatter.numberStyle = .decimal
     }
     
     func number(from: String?) -> Decimal? {

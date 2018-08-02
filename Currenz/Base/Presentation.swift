@@ -39,7 +39,7 @@ enum Presentation {
     
     func pop() {
         switch self {
-        case .root(let window):
+        case .root:
             // TODO (MK): How to handle it?
             break
         case .present(let viewController):

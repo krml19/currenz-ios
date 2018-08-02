@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configure()
         
-        
         return true
     }
 
@@ -54,7 +53,9 @@ private extension AppDelegate {
         coordinator.start()
     }
     private func configureLogger() {
+        #if DEBUG
         let console = ConsoleDestination()
         log.addDestination(console)
+        #endif
     }
 }

@@ -9,22 +9,6 @@
 import RxSwift
 import RxDataSources
 
-struct CurrencyFilters {
-    let query: BehaviorSubject<String?>
-    let items = Variable<[CurrencyModel]>([])
-    
-    static private let containsIgnoreCase: (String, String) -> Bool = { code, query in
-        return code.lowercased().hasPrefix(query.lowercased())
-    }
-    
-    var filtersItems: Observable<[CurrencyModel]> {
-        return Observable.combineLatest(query.asObservable(), items.asObservable()) { (query, it) -> [CurrencyModel] in
-            guard let query = query else { return it }
-            return it.filter({CurrencyFilters.containsIgnoreCase($0.code, query)})
-        }
-    }
-}
-
 final class CurrencyListViewModel: ViewModel {
     
     let input: Input
@@ -40,7 +24,11 @@ final class CurrencyListViewModel: ViewModel {
         filters = CurrencyFilters(query: input.inputQuery)
         super.init()
         
-        dependencies.currencyService.currencies().asObservable().bind(to: filters.items).disposed(by: disposeBag)
+        dependencies.currencyService.currencies().asObservable()
+            .trackActivity(output.activityIndicator)
+            // TODO (MK): Handle errors
+            .catchErrorJustReturn([])
+            .bind(to: filters.items).disposed(by: disposeBag)
         
         filters.filtersItems
             .debug("filtersItems", trimOutput: false)
@@ -63,6 +51,7 @@ extension CurrencyListViewModel {
     struct Output {
         let items: BehaviorSubject<[CurrencySectionModel]>
         let title = BehaviorSubject<String>(value: R.string.localizable.select_new_currency())
+        let activityIndicator: ActivityIndicator = ActivityIndicator()
     }
 }
 

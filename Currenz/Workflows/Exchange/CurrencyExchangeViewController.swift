@@ -14,6 +14,7 @@ final class CurrencyExchangeViewController: ViewController {
 
     // MARK: Properties
     fileprivate var viewModel: CurrencyExchangeViewModel!
+    private var loader: Loader?
     
     @IBOutlet weak var currencyExchangeView: CurrencyExchangeView!
     override func viewDidLoad() {
@@ -53,6 +54,8 @@ private extension CurrencyExchangeViewController {
         currencyExchangeView.actions.swapAction
             .bind(to: viewModel.input.swapModels)
             .disposed(by: viewModel.disposeBag)
+        
+        loader = Loader(activityIndicator: viewModel.output.activityIndicator)
     }
 }
 
