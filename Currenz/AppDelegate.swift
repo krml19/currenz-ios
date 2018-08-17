@@ -54,8 +54,8 @@ private extension AppDelegate {
     }
     private func configureLogger() {
         #if DEBUG
-        let console = ConsoleDestination()
-        log.addDestination(console)
+            let console = ConsoleDestination()
+            log.addDestination(console)
         #endif
     }
 }

@@ -21,8 +21,25 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 0 files.
+  /// This `R.file` struct is generated, and contains static references to 2 files.
   struct file {
+    /// Resource file `drop_loading.json`.
+    static let drop_loadingJson = Rswift.FileResource(bundle: R.hostingBundle, name: "drop_loading", pathExtension: "json")
+    /// Resource file `syncing.json`.
+    static let syncingJson = Rswift.FileResource(bundle: R.hostingBundle, name: "syncing", pathExtension: "json")
+    
+    /// `bundle.url(forResource: "drop_loading", withExtension: "json")`
+    static func drop_loadingJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.drop_loadingJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "syncing", withExtension: "json")`
+    static func syncingJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.syncingJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
@@ -51,7 +68,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
     /// Nib `CurrencyExchangeView`.
     static let currencyExchangeView = _R.nib._CurrencyExchangeView()
@@ -59,6 +76,8 @@ struct R: Rswift.Validatable {
     static let currencyTableViewCell = _R.nib._CurrencyTableViewCell()
     /// Nib `CurrencyView`.
     static let currencyView = _R.nib._CurrencyView()
+    /// Nib `LoaderView`.
+    static let loaderView = _R.nib._LoaderView()
     /// Nib `SwapView`.
     static let swapView = _R.nib._SwapView()
     
@@ -75,6 +94,11 @@ struct R: Rswift.Validatable {
     /// `UINib(name: "CurrencyView", in: bundle)`
     static func currencyView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.currencyView)
+    }
+    
+    /// `UINib(name: "LoaderView", in: bundle)`
+    static func loaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loaderView)
     }
     
     /// `UINib(name: "SwapView", in: bundle)`
@@ -222,6 +246,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _LoaderView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LoaderView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> LoaderView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoaderView
       }
       
       fileprivate init() {}

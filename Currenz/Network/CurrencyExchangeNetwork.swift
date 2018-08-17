@@ -49,6 +49,7 @@ class CurrencyService: CurrencyServiceType {
             })
             // TODO (MK): Add extension for Single in RxOptional
             .asObservable()
+            .delay(1, scheduler: MainScheduler.instance)
             .errorOnNil(AppError.jsonParsing)
             .asSingle()
     }

@@ -33,7 +33,13 @@ final class CurrencyExchangeView: View, NibOwnerLoadable {
     
     let dataModel: DataModel = DataModel()
     var actions: Actions!
-    
+    var activityIndicator: ActivityIndicator? {
+        didSet {
+            if let activityIndicator = activityIndicator {
+                swapView.setActivityIndicator(activityIndicator: activityIndicator)
+            }
+        }
+    }
     @IBOutlet private weak var fromCurrencyView: CurrencyView!
     @IBOutlet private weak var toCurrencyView: CurrencyView!
     @IBOutlet weak var swapView: SwapView!

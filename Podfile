@@ -25,8 +25,11 @@ target 'Currenz' do
   pod 'ChameleonFramework'
   pod 'Reusable'
   pod 'NVActivityIndicatorView'
+  pod 'lottie-ios'
+  pod 'SnapKit'
   # Utils
   pod 'R.swift'
+  
   
   target 'CurrenzTests' do
     inherit! :search_paths

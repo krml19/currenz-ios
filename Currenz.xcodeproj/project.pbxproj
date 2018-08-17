@@ -17,6 +17,12 @@
 		F21897FB20FDFBDE00FD7933 /* CurrencyExchangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21897F820FDFBDE00FD7933 /* CurrencyExchangeView.xib */; };
 		F218980520FE008F00FD7933 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F218980220FE008F00FD7933 /* CurrencyView.swift */; };
 		F218980720FE008F00FD7933 /* CurrencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F218980420FE008F00FD7933 /* CurrencyView.xib */; };
+		F244A58C2114D56F00F97E3B /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244A5892114D56F00F97E3B /* LoaderView.swift */; };
+		F244A58D2114D56F00F97E3B /* LoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F244A58A2114D56F00F97E3B /* LoaderViewModel.swift */; };
+		F244A58E2114D56F00F97E3B /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F244A58B2114D56F00F97E3B /* LoaderView.xib */; };
+		F251082821235C7500CB2B25 /* drop_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = F251082721235C7500CB2B25 /* drop_loading.json */; };
+		F251082A21235C7E00CB2B25 /* syncing.json in Resources */ = {isa = PBXBuildFile; fileRef = F251082921235C7E00CB2B25 /* syncing.json */; };
+		F251082C21260A3F00CB2B25 /* LottieButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F251082B21260A3F00CB2B25 /* LottieButton.swift */; };
 		F260DEDA210537C200487AF5 /* CurrencyRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260DED8210537C200487AF5 /* CurrencyRateModel.swift */; };
 		F260DEDB210537C200487AF5 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260DED9210537C200487AF5 /* CurrencyModel.swift */; };
 		F260DEDD210537DB00487AF5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260DEDC210537DB00487AF5 /* AppCoordinator.swift */; };
@@ -101,6 +107,12 @@
 		F21897F820FDFBDE00FD7933 /* CurrencyExchangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyExchangeView.xib; sourceTree = "<group>"; };
 		F218980220FE008F00FD7933 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		F218980420FE008F00FD7933 /* CurrencyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyView.xib; sourceTree = "<group>"; };
+		F244A5892114D56F00F97E3B /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		F244A58A2114D56F00F97E3B /* LoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewModel.swift; sourceTree = "<group>"; };
+		F244A58B2114D56F00F97E3B /* LoaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
+		F251082721235C7500CB2B25 /* drop_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drop_loading.json; sourceTree = "<group>"; };
+		F251082921235C7E00CB2B25 /* syncing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = syncing.json; sourceTree = "<group>"; };
+		F251082B21260A3F00CB2B25 /* LottieButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieButton.swift; sourceTree = "<group>"; };
 		F260DED8210537C200487AF5 /* CurrencyRateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRateModel.swift; sourceTree = "<group>"; };
 		F260DED9210537C200487AF5 /* CurrencyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		F260DEDC210537DB00487AF5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -239,6 +251,15 @@
 			path = CurrencyView;
 			sourceTree = "<group>";
 		};
+		F251082621235C5200CB2B25 /* lottie-animations */ = {
+			isa = PBXGroup;
+			children = (
+				F251082921235C7E00CB2B25 /* syncing.json */,
+				F251082721235C7500CB2B25 /* drop_loading.json */,
+			);
+			path = "lottie-animations";
+			sourceTree = "<group>";
+		};
 		F260DEF521053D9100487AF5 /* Currencies List */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +297,10 @@
 			isa = PBXGroup;
 			children = (
 				F260DF0D210604BC00487AF5 /* CurrencyTextField.swift */,
+				F244A5892114D56F00F97E3B /* LoaderView.swift */,
+				F244A58A2114D56F00F97E3B /* LoaderViewModel.swift */,
+				F244A58B2114D56F00F97E3B /* LoaderView.xib */,
+				F251082B21260A3F00CB2B25 /* LottieButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -342,6 +367,7 @@
 		F2686D0520FD3EE100C23F44 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F251082621235C5200CB2B25 /* lottie-animations */,
 				F21897EB20FD489900FD7933 /* Localizable.strings */,
 				F2F49BED20FD35440087A793 /* Assets.xcassets */,
 			);
@@ -532,9 +558,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F260DF0621053D9100487AF5 /* CurrencyTableViewCell.xib in Resources */,
+				F244A58E2114D56F00F97E3B /* LoaderView.xib in Resources */,
 				F2686D0D20FD415400C23F44 /* CurrencyExchange.storyboard in Resources */,
 				F21897FB20FDFBDE00FD7933 /* CurrencyExchangeView.xib in Resources */,
 				F260DF0A21053DAF00487AF5 /* SwapView.xib in Resources */,
+				F251082A21235C7E00CB2B25 /* syncing.json in Resources */,
+				F251082821235C7500CB2B25 /* drop_loading.json in Resources */,
 				F21897ED20FD489900FD7933 /* Localizable.strings in Resources */,
 				F2F49BEE20FD35440087A793 /* Assets.xcassets in Resources */,
 				F218980720FE008F00FD7933 /* CurrencyView.xib in Resources */,
@@ -617,7 +646,9 @@
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -636,7 +667,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -706,6 +739,7 @@
 				F260DF10210604E200487AF5 /* PassiveCurrencyView.swift in Sources */,
 				F2E2C3D72113991D00E45CB8 /* CurrencyFilters.swift in Sources */,
 				F260DF0321053D9100487AF5 /* CurrencyListViewModel.swift in Sources */,
+				F251082C21260A3F00CB2B25 /* LottieButton.swift in Sources */,
 				F260DF0B21053DAF00487AF5 /* SwapView.swift in Sources */,
 				F218980520FE008F00FD7933 /* CurrencyView.swift in Sources */,
 				F260DEDA210537C200487AF5 /* CurrencyRateModel.swift in Sources */,
@@ -721,6 +755,7 @@
 				F2686CFF20FD3A8300C23F44 /* CurrencyExchangeNetwork.swift in Sources */,
 				F260DEE12105382600487AF5 /* CurrencyAPI.swift in Sources */,
 				F2686CF320FD3A7500C23F44 /* ViewModelBinder.swift in Sources */,
+				F244A58C2114D56F00F97E3B /* LoaderView.swift in Sources */,
 				F260DEDF210537F500487AF5 /* FormatterHelper.swift in Sources */,
 				F2686D0E20FD415400C23F44 /* CurrencyExchangeCoordinator.swift in Sources */,
 				F2686D1420FD424F00C23F44 /* NavigationController.swift in Sources */,
@@ -731,6 +766,7 @@
 				F260DEE52105384000487AF5 /* Command.swift in Sources */,
 				F2686D1920FD463500C23F44 /* R.generated.swift in Sources */,
 				F2686D0420FD3EC000C23F44 /* Appearance.swift in Sources */,
+				F244A58D2114D56F00F97E3B /* LoaderViewModel.swift in Sources */,
 				F2F49BE920FD35430087A793 /* ViewController.swift in Sources */,
 				F260DF0021053D9100487AF5 /* CurrencyListNavigationController.swift in Sources */,
 				F260DF0521053D9100487AF5 /* CurrencyTableViewCell.swift in Sources */,

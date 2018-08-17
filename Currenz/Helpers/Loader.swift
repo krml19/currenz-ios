@@ -9,26 +9,31 @@
 import Foundation
 import NVActivityIndicatorView
 import RxSwift
+import SnapKit
 
 final class Loader {
-    private let activityIndicator: ActivityIndicator
-    private let disposeBag = DisposeBag()
-    private let activityData: ActivityData
+    private var disposeBag = DisposeBag()
     
-    init(activityIndicator: ActivityIndicator, activityData: ActivityData = ActivityData()) {
-        self.activityIndicator = activityIndicator
-        self.activityData = activityData
-        
-        bindActivityIndicator()
+    func bind(activityIndicator: ActivityIndicator, loadableView: LoaderView, presentingView: UIView) {
+        disposeBag = DisposeBag()
+        presentingView.addSubview(loadableView)
+        presentingView.bringSubviewToFront(loadableView)
+        loadableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        activityIndicator
+            .drive(onNext: { [weak loadableView] (loading) in
+                loading ? loadableView?.startRunningAnimations() : loadableView?.stopRunningAnimations()
+            }).disposed(by: disposeBag)
     }
     
-    private func bindActivityIndicator() {
-        activityIndicator.drive(onNext: { [weak self] (loading) in
-            guard loading, let strongSelf = self else {
+    func bindWindowActivityIndicator(activityIndicator: ActivityIndicator, activityData: ActivityData = ActivityData()) {
+        activityIndicator.drive(onNext: { [weak activityData] (loading) in
+            guard loading, let activityData = activityData else {
                 NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
                 return
             }
-            NVActivityIndicatorPresenter.sharedInstance.startAnimating(strongSelf.activityData, nil)
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(activityData, nil)
         }).disposed(by: disposeBag)
     }
 }

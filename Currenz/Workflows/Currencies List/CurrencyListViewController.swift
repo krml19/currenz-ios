@@ -17,7 +17,7 @@ final class CurrencyListViewController: ViewController {
     var viewModel: CurrencyListViewModel!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    private var loader: Loader?
+    private let loader = Loader()
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ private extension CurrencyListViewController {
             .disposed(by: disposeBag)
 
         prepareSearchController()
-        loader = Loader(activityIndicator: viewModel.output.activityIndicator)
+        loader.bindWindowActivityIndicator(activityIndicator: viewModel.output.activityIndicator)
     }
     
     func prepareSearchController() {

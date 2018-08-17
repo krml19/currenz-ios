@@ -12,6 +12,7 @@ enum Presentation {
     case root(window: UIWindow)
     case present(viewController: UIViewController)
     case push(navigationController: UINavigationController)
+//    case child(view: UIView, presentingView: UIView)
     
     var presentingViewController: UIViewController? {
         switch self {

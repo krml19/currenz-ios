@@ -28,6 +28,10 @@ final class CurrencyListViewModel: ViewModel {
             .trackActivity(output.activityIndicator)
             // TODO (MK): Handle errors
             .catchErrorJustReturn([])
+            .map({ (currencyModels) -> [CurrencyModel] in
+                let common = currencyModels.filter({Locale.commonISOCurrencyCodes.contains($0.code)})
+                return common
+            })
             .bind(to: filters.items).disposed(by: disposeBag)
         
         filters.filtersItems
